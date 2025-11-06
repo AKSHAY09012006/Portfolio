@@ -468,8 +468,7 @@ window.addEventListener('DOMContentLoaded', () => {
   enableTilt();
   document.querySelectorAll('.reveal').forEach(n => io.observe(n));
   window.addEventListener('scroll', scrollProgress, { passive: true });
-  startECEAnimation();
-startTopECEAnimation();
+  startTopECEAnimation();
 });
 
 // Simple image gallery modal for certificates
