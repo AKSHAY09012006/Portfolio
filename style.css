@@ -24,6 +24,15 @@ body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvet
 
 .hero{position:relative;min-height:72vh;display:grid;place-items:center;overflow:hidden}
 .hero__bg .grid{position:absolute;inset:0;background-image:linear-gradient(#ffffff0f 1px,transparent 1px),linear-gradient(90deg,#ffffff10 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(600px 400px at 70% 20%,#000 40%,transparent 60%)}
+
+/* Wave animation */
+.waves{position:absolute;bottom:0;left:0;width:100%;height:200px;overflow:hidden;z-index:0}
+.wave{position:absolute;bottom:-10px;left:0;width:100%;height:100%;animation:wave 8s ease-in-out infinite;opacity:1}
+.wave2{animation:wave 10s ease-in-out infinite reverse;animation-delay:-2s;opacity:0.8}
+.wave3{animation:wave 12s ease-in-out infinite;animation-delay:-4s;opacity:0.6}
+@keyframes wave{0%,100%{transform:translateX(0) translateY(0)}25%{transform:translateX(-5%) translateY(-8px)}50%{transform:translateX(-10%) translateY(8px)}75%{transform:translateX(-5%) translateY(-4px)}
+}
+
 .blob{position:absolute;filter:blur(40px);opacity:.55;mix-blend-mode:screen;border-radius:50%}
 .blob.b1{width:420px;height:420px;background:radial-gradient(circle at 30% 30%,#00ffd5,transparent 60%),radial-gradient(circle at 80% 50%,#836bff,transparent 55%);top:-80px;right:-80px;animation:float 12s ease-in-out infinite}
 .blob.b2{width:360px;height:360px;background:radial-gradient(circle at 30% 20%,#ffe08a,transparent 60%),radial-gradient(circle at 70% 60%,#7bffb3,transparent 55%);bottom:-120px;left:-60px;animation:float 14s ease-in-out infinite reverse}
