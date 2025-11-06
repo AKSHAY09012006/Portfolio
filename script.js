@@ -15,7 +15,7 @@ const PROFILE = {
   linkedin: "https://www.linkedin.com/in/akshay-s-s-28089b345",
   github: "https://github.com/AKSHAY09012006",
   instagram: "https://www.instagram.com/akshay.iq/",
-  resume: "assets/Akshay-Resume.pdf",
+  resume: "assets/Akshay-Resume.pdf?v=" + Date.now(),
   badges: ["ECE", "VLSI", "Verilog HDL", "Embedded C", "IoT", "Digital Logic"],
   languages: [
     { name: "Malayalam", level: "Native" },
