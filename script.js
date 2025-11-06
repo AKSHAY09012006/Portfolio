@@ -9,7 +9,7 @@ const PROFILE = {
   ],
   summary:
     "Electronics and Communication engineering enthusiast with hands‑on exposure to embedded systems, digital electronics, VLSI fundamentals and UAV technology. Interested in practical prototyping, documentation and real‑time learning environments.",
-  email: "akshaylakshna@gamil.com", // confirm if this should be gmail.com
+  email: "akshaylakshna@gmail.com", // corrected domain
   phone: "+91 7397662991",
   location: "Chennai, Tamil Nadu, India",
   linkedin: "https://www.linkedin.com/in/akshay-s-s-28089b345",
@@ -455,6 +455,25 @@ function startECEAnimation() {
 
 
 // Boot
+// Contact form -> open default mail client with prefilled subject/body
+function setupContactForm() {
+  const form = document.querySelector('.contact__form');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    const name = String(fd.get('name') || '').trim();
+    const email = String(fd.get('email') || '').trim();
+    const message = String(fd.get('message') || '').trim();
+    if (!name || !email || !message) return; // basic required fields are already in HTML
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— Sender: ${name}\nEmail: ${email}`);
+    const to = PROFILE.email || '';
+    // Trigger the user's default email client
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  });
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   hydrateHero();
   const taglineEl = document.getElementById('tagline');
@@ -469,6 +488,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.reveal').forEach(n => io.observe(n));
   window.addEventListener('scroll', scrollProgress, { passive: true });
   startTopECEAnimation();
+  setupContactForm();
 });
 
 // Simple image gallery modal for certificates
