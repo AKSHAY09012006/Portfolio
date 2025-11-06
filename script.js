@@ -463,14 +463,22 @@ function setupContactForm() {
     e.preventDefault();
     const fd = new FormData(form);
     const name = String(fd.get('name') || '').trim();
-    const email = String(fd.get('email') || '').trim();
+    const fromEmail = String(fd.get('email') || '').trim();
     const message = String(fd.get('message') || '').trim();
-    if (!name || !email || !message) return; // basic required fields are already in HTML
+    if (!name || !fromEmail || !message) return; // basic required fields are already in HTML
     const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— Sender: ${name}\nEmail: ${email}`);
+    const body = encodeURIComponent(`${message}\n\n— Sender: ${name}\nEmail: ${fromEmail}`);
     const to = PROFILE.email || '';
-    // Trigger the user's default email client
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    // Try Gmail web compose first (opens new tab)
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${subject}&body=${body}`;
+    let opened = false;
+    try {
+      const w = window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+      opened = !!w;
+    } catch {}
+    // Also trigger default mail client as fallback (or for desktop clients)
+    const mailtoUrl = `mailto:${to}?subject=${subject}&body=${body}`;
+    setTimeout(() => { try { window.location.href = mailtoUrl; } catch {} }, opened ? 300 : 0);
   });
 }
 
