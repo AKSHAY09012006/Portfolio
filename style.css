@@ -12,7 +12,7 @@ body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvet
 .brand-wrapper{display:flex;flex-direction:column;gap:2px}
 .nav .brand{font-weight:700;letter-spacing:.5px;text-decoration:none;color:var(--text)}
 .nav .brand span{color:var(--brand)}
-.brand-subtitle{font-size:.7rem;color:var(--brand);font-weight:500;letter-spacing:.15em}
+.brand-subtitle{font-size:.65rem;color:var(--brand);font-weight:500;letter-spacing:.15em}
 .nav-buttons{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .nav-btn{display:inline-block;background:#0a2a6a;color:#fff;border:2px solid transparent;padding:8px 14px;border-radius:999px;text-decoration:none;font-weight:600}
 .nav-btn:hover{background:#082358}
@@ -24,30 +24,26 @@ body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvet
 
 .hero{position:relative;min-height:72vh;display:grid;place-items:center;overflow:hidden}
 .hero__bg .grid{position:absolute;inset:0;background-image:linear-gradient(#ffffff0f 1px,transparent 1px),linear-gradient(90deg,#ffffff10 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(600px 400px at 70% 20%,#000 40%,transparent 60%)}
-.blob{position:absolute;filter:blur(40px);opacity:.55;mix-blend-mode:screen;border-radius:50%}
-.blob.b1{width:420px;height:420px;background:radial-gradient(circle at 30% 30%,#00ffd5,transparent 60%),radial-gradient(circle at 80% 50%,#836bff,transparent 55%);top:-80px;right:-80px;animation:float 12s ease-in-out infinite}
-.blob.b2{width:360px;height:360px;background:radial-gradient(circle at 30% 20%,#ffe08a,transparent 60%),radial-gradient(circle at 70% 60%,#7bffb3,transparent 55%);bottom:-120px;left:-60px;animation:float 14s ease-in-out infinite reverse}
-@keyframes float{50%{transform:translateY(-12px) translateX(8px)} }
-
-/* ECE animation canvas */
 .ece-canvas{position:absolute;inset:0;pointer-events:none;opacity:.55;mix-blend-mode:screen}
+
+
 /* Full-width top background for ECE animation */
 .ece-bg-full{position:fixed;left:0;top:0;width:100%;height:200px;z-index:40;pointer-events:none}
 .ece-canvas-top{position:absolute;inset:0;width:100%;height:100%;opacity:.7;mix-blend-mode:screen}
 
 .hero__content{position:relative;z-index:1;text-align:left}
-.eyebrow{color:var(--accent);letter-spacing:.25em;text-transform:uppercase;font-size:.8rem}
-.hero h1{font-size:clamp(2.2rem,6vw,4rem);margin:6px 0}
-.portfolio-label{font-size:1rem;font-weight:500;color:var(--brand);margin:8px 0;letter-spacing:.1em}
+.eyebrow{color:var(--accent);letter-spacing:.25em;text-transform:uppercase;font-size:.75rem}
+.hero h1{font-size:clamp(2rem,6vw,3.6rem);margin:6px 0}
+.portfolio-label{font-size:.95rem;font-weight:500;color:var(--brand);margin:8px 0;letter-spacing:.1em}
 .hero h2{font-weight:500;color:var(--muted);min-height:28px}
 .hero .muted{color:var(--muted);max-width:700px}
 .cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
 .badges{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
-.badge{padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:linear-gradient(180deg,#111827,#0d131f);font-size:.8rem;color:var(--muted)}
+.badge{padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:linear-gradient(180deg,#111827,#0d131f);font-size:.75rem;color:var(--muted)}
 
 .section{padding:70px 0;scroll-margin-top:80px}
 .section.alt{background:linear-gradient(180deg,#0b0f17,#0d121e)}
-.section__title{font-size:1.6rem;margin:0 0 20px}
+.section__title{font-size:1.5rem;margin:0 0 20px}
 .muted{color:var(--muted)}
 
 .about__wrap{display:flex;gap:18px;align-items:center}
@@ -58,7 +54,7 @@ body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvet
 .expertise-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:var(--shadow);transition:transform .3s ease,box-shadow .3s ease}
 .expertise-card:hover{transform:translateY(-6px);box-shadow:0 15px 40px rgba(0,0,0,.5)}
 .expertise-icon{font-size:2.5rem;margin-bottom:12px}
-.expertise-card h4{margin:0 0 10px;font-size:1.2rem;color:var(--brand)}
+.expertise-card h4{margin:0 0 10px;font-size:1.1rem;color:var(--brand)}
 .expertise-card p{color:var(--muted);margin:0;line-height:1.6}
 
 .skills__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
@@ -75,7 +71,7 @@ body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvet
 .card__tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .tag{font-family:"JetBrains Mono",monospace;font-size:.75rem;color:#b6c2d6;background:#0c1323;border:1px solid var(--border);padding:3px 8px;border-radius:999px}
 .card__title{margin:0 0 6px}
-.card__desc{color:var(--muted);font-size:.95rem}
+.card__desc{color:var(--muted);font-size:.9rem}
 .card__footer{display:flex;justify-content:space-between;align-items:center;padding:0 14px 14px}
 .card__footer a{color:var(--brand)}
 
@@ -106,10 +102,6 @@ body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvet
 
 /* scroll progress */
 #scroll-progress{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--brand),var(--brand-2));z-index:100}
-/***** layout offset for fixed top animation *****/
-body{--topWaveH:200px}
-.hero{min-height:calc(72vh + var(--topWaveH))}
-.section{scroll-margin-top:calc(80px + var(--topWaveH) * 0.25)}
 
 /* modal styles */
 .modal{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;z-index:200}

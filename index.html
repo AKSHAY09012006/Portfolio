@@ -10,8 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=3" />
 </head>
-<body style="--topWaveH:0px">
+<body>
   <div id="scroll-progress"></div>
+  <div class="ece-bg-full"><canvas id="ece-canvas-top" class="ece-canvas-top" aria-hidden="true"></canvas></div>
   
   <header class="nav">
     <div class="brand-wrapper">
@@ -35,6 +36,7 @@
     <section class="hero" id="home">
       <div class="hero__bg">
         <div class="grid"></div>
+        <canvas id="ece-canvas" class="ece-canvas" aria-hidden="true"></canvas>
       </div>
       <div class="hero__content container">
         <p class="eyebrow">Hello, I'm</p>

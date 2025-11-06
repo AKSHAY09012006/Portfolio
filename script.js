@@ -453,6 +453,7 @@ function startECEAnimation() {
   raf = requestAnimationFrame(draw);
 }
 
+
 // Boot
 window.addEventListener('DOMContentLoaded', () => {
   hydrateHero();
@@ -586,3 +587,4 @@ function startTopECEAnimation(){
   document.addEventListener('visibilitychange', onVis);
   raf = requestAnimationFrame(draw);
 }
+
