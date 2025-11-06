@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Akshay S S · ECE Portfolio</title>
-  <meta name="description" content="Portfolio of Akshay S S — Electronics & Communication Engineering student." />
+  <title>About — Akshay S S</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=3" />
 </head>
-<body style="--topWaveH:0px">
+<body>
   <div id="scroll-progress"></div>
-  
+  <div class="ece-bg-full"><canvas id="ece-canvas-top" class="ece-canvas-top" aria-hidden="true"></canvas></div>
   <header class="nav">
     <div class="brand-wrapper">
-      <a class="brand" href="#home">Akshay<span> S S</span></a>
+      <a class="brand" href="index.html#home">Akshay<span> S S</span></a>
       <span class="brand-subtitle">Portfolio</span>
     </div>
     <nav class="nav-buttons">
@@ -31,34 +30,30 @@
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="hero__bg">
-        <div class="grid"></div>
-      </div>
-      <div class="hero__content container">
-        <p class="eyebrow">Hello, I'm</p>
-        <h1><span id="name">Akshay S S</span></h1>
-        <p class="portfolio-label">Portfolio</p>
-        <h2 class="typing" id="tagline">ECE Student</h2>
-        <p class="muted" id="summary">I build electronics, embedded, and VLSI-flavored projects.</p>
-        <div class="cta">
-          <a class="btn primary" id="resumeLink" target="_blank" rel="noreferrer">Download Resume</a>
-          <a class="nav-btn" href="contact.html">Contact →</a>
-        </div>
-        <div class="badges" id="heroBadges"></div>
-      </div>
-    </section>
-
-    <!-- Minimal About preview on Home -->
-    <section id="about-preview" class="section container reveal">
-      <h3 class="section__title">About</h3>
+    <section id="about" class="section container reveal">
+      <h3 class="section__title">About <span class="accent-blue">Me</span></h3>
       <div class="about__wrap">
         <img src="assets/images/avatar.png" alt="avatar" class="avatar" onerror="this.style.display='none'" />
-        <p id="aboutText">I’m an Electronics and Communication Engineering student passionate about digital design, HDL and embedded systems. I enjoy turning ideas into working hardware + software prototypes.</p>
+        <p id="aboutText">Electronics and Communication engineering enthusiast with hands‑on experience in projects, specializing in embedded systems, digital electronics, VLSI fundamentals and UAV technology. Delivers clean, scalable prototypes and collaborates well in team environments.</p>
       </div>
-      <div style="margin-top:14px">
-        <a class="nav-btn" href="about.html">Read more →</a>
+      
+      <!-- Featured Expertise Areas -->
+      <div class="expertise-grid">
+        <div class="expertise-card reveal">
+          <div class="expertise-icon">🔌</div>
+          <h4>Embedded Systems</h4>
+          <p>Building robust and efficient embedded solutions with microcontrollers</p>
+        </div>
+        <div class="expertise-card reveal">
+          <div class="expertise-icon">⚡</div>
+          <h4>VLSI Design</h4>
+          <p>Creating hardware designs using Verilog HDL and digital logic fundamentals</p>
+        </div>
+        <div class="expertise-card reveal">
+          <div class="expertise-icon">🛸</div>
+          <h4>UAV Technology</h4>
+          <p>Exploring drone systems, flight concepts, and sensor-based applications</p>
+        </div>
       </div>
     </section>
   </main>
