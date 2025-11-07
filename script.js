@@ -237,7 +237,7 @@ function typing(elm, words) {
 function drawSkills() {
   const grid = $("#skillsGrid");
   SKILLS.forEach(cat => {
-    const card = el("div", "skill");
+    const card = el("div", "skill reveal");
     const h = el("h4"); h.textContent = cat.title; card.appendChild(h);
     cat.items.forEach(it => {
       const row = el("div"); row.style.margin = "10px 0"; row.textContent = it.name;
@@ -255,7 +255,7 @@ function drawSkills() {
 
 // Cards utility
 function makeCard(item) {
-  const card = el("article", "card tilt");
+  const card = el("article", "card tilt reveal");
   const body = el("div", "card__body");
   const h = el("h4", "card__title"); h.textContent = item.title; body.appendChild(h);
   if (item.desc) { const p = el("p", "card__desc"); p.textContent = item.desc; body.appendChild(p); }
@@ -319,12 +319,14 @@ async function drawCerts() {
     }
     grid.appendChild(card);
   });
+  // Observe newly added cards
+  grid.querySelectorAll('.reveal').forEach(n => io.observe(n));
 }
 
 function drawTimeline(selector, data) {
   const root = $(selector);
   data.forEach(item => {
-    const div = el("div", "item");
+    const div = el("div", "item reveal");
     const role = el("div", "role"); role.textContent = `${item.role}`; div.appendChild(role);
     const where = el("div", "where"); where.textContent = `${item.where} • ${item.period}`; div.appendChild(where);
     if (item.notes) { const p = el("p", "muted"); p.textContent = item.notes; div.appendChild(p); }
@@ -523,7 +525,12 @@ window.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('#expTimeline')) drawTimeline('#expTimeline', EXPERIENCE);
   if (document.querySelector('#eduTimeline')) drawTimeline('#eduTimeline', EDUCATION);
   enableTilt();
+  // Observe all elements with reveal class, including dynamically added ones
   document.querySelectorAll('.reveal').forEach(n => io.observe(n));
+  // Re-observe after a brief delay to catch dynamically generated content
+  setTimeout(() => {
+    document.querySelectorAll('.reveal').forEach(n => io.observe(n));
+  }, 100);
   window.addEventListener('scroll', scrollProgress, { passive: true });
   startTopECEAnimation();
   setupContactForm();
