@@ -525,6 +525,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('#expTimeline')) drawTimeline('#expTimeline', EXPERIENCE);
   if (document.querySelector('#eduTimeline')) drawTimeline('#eduTimeline', EDUCATION);
   enableTilt();
+  setupModal();
   // Observe all elements with reveal class, including dynamically added ones
   document.querySelectorAll('.reveal').forEach(n => io.observe(n));
   // Re-observe after a brief delay to catch dynamically generated content

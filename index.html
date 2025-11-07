@@ -20,14 +20,14 @@
       <span class="brand-subtitle">Portfolio</span>
     </div>
     <nav class="nav-buttons">
-      <a href="about.html" class="nav-btn">About</a>
-      <a href="skills.html" class="nav-btn">Skills</a>
-      <a href="projects.html" class="nav-btn">Projects</a>
-      <a href="publications.html" class="nav-btn">Publications</a>
-      <a href="certs.html" class="nav-btn">Certificates</a>
-      <a href="experience.html" class="nav-btn">Experience</a>
-      <a href="education.html" class="nav-btn">Education</a>
-      <a href="contact.html" class="nav-btn contact-btn">Contact</a>
+      <a href="#about" class="nav-btn">About</a>
+      <a href="#skills" class="nav-btn">Skills</a>
+      <a href="#projects" class="nav-btn">Projects</a>
+      <a href="#publications" class="nav-btn">Publications</a>
+      <a href="#certs" class="nav-btn">Certificates</a>
+      <a href="#experience" class="nav-btn">Experience</a>
+      <a href="#education" class="nav-btn">Education</a>
+      <a href="#contact" class="nav-btn contact-btn">Contact</a>
     </nav>
   </header>
 
@@ -45,24 +45,119 @@
         <p class="muted" id="summary">I build electronics, embedded, and VLSI-flavored projects.</p>
         <div class="cta">
           <a class="btn primary" id="resumeLink" target="_blank" rel="noreferrer">Download Resume</a>
-          <a class="nav-btn" href="contact.html">Contact →</a>
+          <a class="nav-btn" href="#contact">Contact →</a>
         </div>
         <div class="badges" id="heroBadges"></div>
       </div>
     </section>
 
-    <!-- Minimal About preview on Home -->
-    <section id="about-preview" class="section container reveal">
-      <h3 class="section__title">About</h3>
+    <!-- About Section -->
+    <section id="about" class="section container reveal">
+      <h3 class="section__title">About <span class="accent-blue">Me</span></h3>
       <div class="about__wrap">
         <img src="assets/images/avatar.png" alt="avatar" class="avatar" onerror="this.style.display='none'" />
-        <p id="aboutText">I’m an Electronics and Communication Engineering student passionate about digital design, HDL and embedded systems. I enjoy turning ideas into working hardware + software prototypes.</p>
+        <p id="aboutText">Electronics and Communication engineering enthusiast with hands‑on experience in projects, specializing in embedded systems, digital electronics, VLSI fundamentals and UAV technology. Delivers clean, scalable prototypes and collaborates well in team environments.</p>
       </div>
-      <div style="margin-top:14px">
-        <a class="nav-btn" href="about.html">Read more →</a>
+      
+      <!-- Featured Expertise Areas -->
+      <div class="expertise-grid">
+        <div class="expertise-card reveal">
+          <div class="expertise-icon">🔌</div>
+          <h4>Embedded Systems</h4>
+          <p>Building robust and efficient embedded solutions with microcontrollers</p>
+        </div>
+        <div class="expertise-card reveal">
+          <div class="expertise-icon">⚡</div>
+          <h4>VLSI Design</h4>
+          <p>Creating hardware designs using Verilog HDL and digital logic fundamentals</p>
+        </div>
+        <div class="expertise-card reveal">
+          <div class="expertise-icon">🛸</div>
+          <h4>UAV Technology</h4>
+          <p>Exploring drone systems, flight concepts, and sensor-based applications</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section alt reveal">
+      <div class="container">
+        <h3 class="section__title">My <span class="accent-blue">Tech Stack</span></h3>
+        <div id="skillsGrid" class="skills__grid"></div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section container reveal">
+      <h3 class="section__title">Projects</h3>
+      <div id="projectsGrid" class="cards"></div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section alt reveal">
+      <div class="container">
+        <h3 class="section__title">Publications</h3>
+        <div id="publicationsGrid" class="cards"></div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certs" class="section container reveal">
+      <h3 class="section__title">Certificates</h3>
+      <div id="certsGrid" class="cards compact"></div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section alt reveal">
+      <div class="container">
+        <h3 class="section__title">Experience</h3>
+        <div id="expTimeline" class="timeline"></div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section container reveal">
+      <h3 class="section__title">Education</h3>
+      <div id="eduTimeline" class="timeline"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section alt reveal">
+      <div class="container">
+        <h3 class="section__title">Get in <span class="accent-blue">Touch</span></h3>
+        <div class="contact__grid">
+          <div>
+            <p>Email: <a id="emailLink" href="#"></a></p>
+            <p>Phone: <a id="phoneLink" href="#"></a></p>
+            <p>Location: <span id="locationText"></span></p>
+            <p>GitHub: <a id="githubLink" href="#" target="_blank" rel="noreferrer">Add GitHub</a></p>
+            <p>LinkedIn: <a id="linkedinLink2" href="#" target="_blank" rel="noreferrer">Profile</a></p>
+            <p>Instagram: <a id="instagramLink" href="https://www.instagram.com/akshay.iq/" target="_blank" rel="noreferrer"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:6px"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.8a5.2 5.2 0 1 1 0 10.4 5.2 5.2 0 0 1 0-10.4zm0 2a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zM18.5 6a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/></svg>Instagram</a></p>
+          </div>
+          <form id="contactForm" class="contact__form" action="#" method="POST" data-backend="formspree">
+            <input type="text" name="name" placeholder="Name *" required />
+            <input type="email" name="email" placeholder="Email *" required />
+            <textarea name="message" rows="4" placeholder="Message" required></textarea>
+            <input type="text" name="_honeypot" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+            <input type="hidden" name="_subject" value="Portfolio contact" />
+            <button class="btn primary" type="submit">Send Message →</button>
+            <p id="formStatus" class="muted" role="status" aria-live="polite" style="margin:8px 0 0"></p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
+
+  <!-- Image modal / gallery -->
+  <div id="imageModal" class="modal" aria-hidden="true">
+    <div class="modal__inner">
+      <button id="modalClose" class="modal__close" aria-label="Close">×</button>
+      <img id="modalImg" alt="certificate preview" />
+      <div class="modal__caption" id="modalCaption"></div>
+      <button class="modal__nav prev" id="modalPrev" aria-label="Previous">‹</button>
+      <button class="modal__nav next" id="modalNext" aria-label="Next">›</button>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container">
