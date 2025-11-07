@@ -345,9 +345,11 @@ const io = new IntersectionObserver((entries) => {
         const span = bar.querySelector('span');
         if (span) span.style.width = level + '%';
       });
+      // Stop observing once revealed (optional - remove if you want repeat animations)
+      io.unobserve(e.target);
     }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 // Tilt effect
 function enableTilt() {
