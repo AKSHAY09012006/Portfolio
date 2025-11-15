@@ -461,58 +461,65 @@ function startECEAnimation() {
 }
 
 
-// Boot
-// Contact form -> open default mail client with prefilled subject/body
+// Contact form -> Submit via Formspree
 function setupContactForm() {
   const form = document.querySelector('.contact__form');
   if (!form) return;
   const statusEl = document.getElementById('formStatus');
+  
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const fd = new FormData(form);
     const name = String(fd.get('name') || '').trim();
     const fromEmail = String(fd.get('email') || '').trim();
     const message = String(fd.get('message') || '').trim();
-    if (!name || !fromEmail || !message) { if (statusEl) statusEl.textContent = 'Please fill all required fields.'; return; }
-    const btn = form.querySelector('button[type="submit"]');
-    const prev = btn ? btn.textContent : '';
-    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-
-    const backend = (form.getAttribute('data-backend') || '').toLowerCase();
-    if (backend === 'formspree' && CONTACT_BACKEND.type === 'formspree' && CONTACT_BACKEND.formspreeFormId && CONTACT_BACKEND.formspreeFormId !== 'your_form_id_here') {
-      try {
-        const res = await fetch(`https://formspree.io/f/${CONTACT_BACKEND.formspreeFormId}`, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: fd,
-        });
-        if (res.ok) {
-          form.reset();
-          if (statusEl) { statusEl.textContent = 'Thanks! Your message was sent.'; statusEl.style.color = '#6cf9e6'; }
-        } else {
-          if (statusEl) statusEl.textContent = 'Sorry, there was a problem. Please try again later.';
-        }
-      } catch {
-        if (statusEl) statusEl.textContent = 'Network error. Please try again.';
-      } finally {
-        if (btn) { btn.disabled = false; btn.textContent = prev; }
+    
+    if (!name || !fromEmail || !message) {
+      if (statusEl) {
+        statusEl.textContent = 'Please fill all required fields.';
+        statusEl.style.color = '#ff6b6b';
       }
       return;
     }
-
-    // Fallback to mailto (opens default mail app or Gmail)
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— Sender: ${name}\nEmail: ${fromEmail}`);
-    const to = PROFILE.email || '';
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${subject}&body=${body}`;
-    let opened = false;
+    
+    const btn = form.querySelector('button[type="submit"]');
+    const prevText = btn ? btn.textContent : '';
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+    }
+    
     try {
-      const w = window.open(gmailUrl, '_blank', 'noopener,noreferrer');
-      opened = !!w;
-    } catch {}
-    const mailtoUrl = `mailto:${to}?subject=${subject}&body=${body}`;
-    setTimeout(() => { try { window.location.href = mailtoUrl; } catch {} }, opened ? 300 : 0);
-    if (btn) { btn.disabled = false; btn.textContent = prev; }
+      // Submit directly to Formspree
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: fd,
+      });
+      
+      if (res.ok) {
+        form.reset();
+        if (statusEl) {
+          statusEl.textContent = '✓ Thanks! Your message was sent successfully.';
+          statusEl.style.color = '#6cf9e6';
+        }
+      } else {
+        if (statusEl) {
+          statusEl.textContent = 'Sorry, there was a problem. Please try again.';
+          statusEl.style.color = '#ff6b6b';
+        }
+      }
+    } catch (err) {
+      if (statusEl) {
+        statusEl.textContent = 'Network error. Please check your connection and try again.';
+        statusEl.style.color = '#ff6b6b';
+      }
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = prevText;
+      }
+    }
   });
 }
 
