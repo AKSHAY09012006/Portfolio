@@ -26,7 +26,7 @@ const PROFILE = {
 };
 
 // Contact backend configuration — replace formspreeFormId with your Formspree form ID.
-const CONTACT_BACKEND = { type: 'formspree', formspreeFormId: 'your_form_id_here' };
+const CONTACT_BACKEND = { type: 'formspree', formspreeFormId: 'xblqyywp' };
 
 const SKILLS = [
   {
