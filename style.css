@@ -230,6 +230,6 @@ body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvet
   
   .contact__grid p{font-size:.9rem}
   
-  /* Hide ECE background on very small screens for performance */
-  .ece-bg-full{display:none}
+  /* Show ECE background on very small screens (slightly reduced height for performance) */
+  .ece-bg-full{display:block;height:140px}
 }
