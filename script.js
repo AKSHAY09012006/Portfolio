@@ -629,33 +629,7 @@ function startTopECEAnimation(){
     const w = canvas.width/dpr;
     const h = canvas.height/dpr;
     ctx.clearRect(0,0,w,h);
-    ctx.save();
-    ctx.globalCompositeOperation = 'lighter';
-    const baseA = h * 0.40;
-    const A1 = Math.min(18, h * 0.28);
-    ctx.beginPath();
-    for(let x=0;x<=w;x+=1){
-      const y = baseA + Math.sin(x*0.02 + t*2.3)*A1;
-      if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
-    }
-    ctx.strokeStyle = brand;
-    ctx.globalAlpha = 0.85;
-    ctx.lineWidth = 1.6;
-    ctx.stroke();
-    const baseD = h * 0.72;
-    const ampD = Math.min(12, h * 0.22);
-    const period = 140;
-    ctx.beginPath();
-    for(let x=0;x<=w;x+=1){
-      const s = Math.sin((x/period)*Math.PI*2 + t*3.4);
-      const y = baseD + (s>0 ? -ampD : ampD);
-      if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
-    }
-    ctx.strokeStyle = brand2;
-    ctx.globalAlpha = 0.6;
-    ctx.lineWidth = 1.4;
-    ctx.stroke();
-    ctx.restore();
+    // Waves removed - keeping canvas clear
     raf = requestAnimationFrame(draw);
   }
   function onVis(){
