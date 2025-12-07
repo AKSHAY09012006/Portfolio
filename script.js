@@ -433,6 +433,21 @@ function startECEAnimation() {
     ctx.lineWidth = 1.6;
     ctx.stroke();
 
+    // Digital square wave
+    const baseD = h * 0.64;
+    const ampD = Math.min(18, h * 0.05);
+    const period = 120; // px
+    ctx.beginPath();
+    for (let x = 0; x <= w; x += 1) {
+      const s = Math.sin((x / period) * Math.PI * 2 + t * 3.0);
+      const y = baseD + (s > 0 ? -ampD : ampD);
+      if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.strokeStyle = brand2;
+    ctx.globalAlpha = 0.6;
+    ctx.lineWidth = 1.4;
+    ctx.stroke();
+
     ctx.restore();
     raf = requestAnimationFrame(draw);
   }
@@ -626,6 +641,19 @@ function startTopECEAnimation(){
     ctx.strokeStyle = brand;
     ctx.globalAlpha = 0.85;
     ctx.lineWidth = 1.6;
+    ctx.stroke();
+    const baseD = h * 0.72;
+    const ampD = Math.min(12, h * 0.22);
+    const period = 140;
+    ctx.beginPath();
+    for(let x=0;x<=w;x+=1){
+      const s = Math.sin((x/period)*Math.PI*2 + t*3.4);
+      const y = baseD + (s>0 ? -ampD : ampD);
+      if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    }
+    ctx.strokeStyle = brand2;
+    ctx.globalAlpha = 0.6;
+    ctx.lineWidth = 1.4;
     ctx.stroke();
     ctx.restore();
     raf = requestAnimationFrame(draw);
