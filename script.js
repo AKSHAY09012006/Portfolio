@@ -15,7 +15,7 @@ const PROFILE = {
   linkedin: "https://www.linkedin.com/in/akshay-s-s-28089b345",
   github: "https://github.com/AKSHAY09012006",
   instagram: "https://www.instagram.com/akshay.iq/",
-  resume: "assets/Akshay-Resume.pdf?v=" + Date.now(),
+  resume: "https://drive.google.com/file/d/1bTc9lV2PaMuehr7Cycd6G5BaviCClvVH/view?usp=sharing",
   badges: ["ECE", "VLSI", "Verilog HDL", "Embedded C", "IoT", "Digital Logic"],
   languages: [
     { name: "Malayalam", level: "Native" },
@@ -282,8 +282,8 @@ function makeCard(item) {
   const report = item.report || null;
   // For non-project cards (e.g., Publications/Certificates), keep the single link as "Open →"
   const openLink = (!isProjects) ? (item.demo || item.link || null) : null;
-  // For projects, show simulation link and report link if available
-  const simLink = (isProjects && item.link && item.link !== '#') ? item.link : null;
+  // For projects, show simulation link only for Wokwi links (external simulation URLs)
+  const simLink = (isProjects && item.link && item.link !== '#' && item.link.includes('wokwi.com')) ? item.link : null;
   if (github || openLink || simLink || report) {
     const acts = el("div", "actions");
     if (openLink) {
