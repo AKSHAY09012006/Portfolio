@@ -74,16 +74,25 @@ const PUBLICATIONS = [
 
 const PROJECTS = [
   {
+    title: "Smart Battery Monitoring System (IoT-Based | Arduino & ESP32)",
+    desc: "Real-time battery monitoring system measuring voltage and estimating SOC. Features OLED display, ESP32 Wi-Fi connectivity for MQTT cloud logging, and fault alert support.",
+    tags: ["IoT", "Arduino", "ESP32", "MQTT", "C/C++", "Embedded", "Sensors"],
+    link: "https://wokwi.com/projects/443977277636198401",
+    report: "https://drive.google.com/file/d/1QbtUvj67SesyGE46RAaKSby6MhH8pfKw/view?usp=sharing",
+  },
+  {
     title: "Real‑Time Gas Monitoring System (RTGMS)",
     desc: "Embedded LPG/propane monitoring using HX711 load cell + MQ‑6 sensor with LCD and buzzer.",
     tags: ["Embedded", "Sensors", "C"],
-    link: "#",
+    link: "https://wokwi.com/projects/437115151985582081",
+    report: "https://drive.google.com/file/d/1mMDl24n0oo1D2Rrw4yOzHp4PrSHluflJ/view?usp=sharing",
   },
   {
     title: "Vision Cane — Assistive Navigation Prototype",
     desc: "Ultrasonic‑based smart cane with vibration feedback; user‑centric design.",
     tags: ["Embedded", "Sensors"],
     link: "#",
+    report: "https://drive.google.com/file/d/1HuYhNUWZTk_ZOqqtBCYQ4nLbB94SZIk4/view?usp=sharing",
   },
   {
     title: "ExpanseIQ",
@@ -270,12 +279,21 @@ function makeCard(item) {
   // Actions: remove all "Live Demo" for Projects; keep links for other sections
   const isProjects = item.section === 'projects';
   const github = item.github || null;
+  const report = item.report || null;
   // For non-project cards (e.g., Publications/Certificates), keep the single link as "Open →"
   const openLink = (!isProjects) ? (item.demo || item.link || null) : null;
-  if (github || openLink) {
+  // For projects, show simulation link and report link if available
+  const simLink = (isProjects && item.link && item.link !== '#') ? item.link : null;
+  if (github || openLink || simLink || report) {
     const acts = el("div", "actions");
     if (openLink) {
       const a1 = el("a"); a1.href = openLink; a1.target = "_blank"; a1.rel = "noreferrer"; a1.textContent = "Open →"; acts.appendChild(a1);
+    }
+    if (simLink) {
+      const aSim = el("a"); aSim.href = simLink; aSim.target = "_blank"; aSim.rel = "noreferrer"; aSim.textContent = "Simulation →"; acts.appendChild(aSim);
+    }
+    if (report) {
+      const aRep = el("a"); aRep.href = report; aRep.target = "_blank"; aRep.rel = "noreferrer"; aRep.textContent = "Report →"; acts.appendChild(aRep);
     }
     if (github) { const a2 = el("a"); a2.href = github; a2.target = "_blank"; a2.rel = "noreferrer"; a2.textContent = "GitHub →"; acts.appendChild(a2); }
     card.appendChild(acts);
@@ -543,6 +561,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }, 100);
   window.addEventListener('scroll', scrollProgress, { passive: true });
   startTopECEAnimation();
+  startECEAnimation();
   setupContactForm();
 });
 
