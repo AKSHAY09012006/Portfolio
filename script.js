@@ -420,13 +420,12 @@ function startECEAnimation() {
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
 
-    // Analog sine (carrier + mod)
+    // Analog sine wave (main wave only)
     const baseA = h * 0.38;
     const A1 = Math.min(26, h * 0.06);
-    const A2 = Math.min(7, h * 0.02);
     ctx.beginPath();
     for (let x = 0; x <= w; x += 1) {
-      const y = baseA + Math.sin(x * 0.02 + t * 2.0) * A1 + Math.sin(x * 0.005 + t * 0.7) * A2;
+      const y = baseA + Math.sin(x * 0.02 + t * 2.0) * A1;
       if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     }
     ctx.strokeStyle = brand;
@@ -448,19 +447,6 @@ function startECEAnimation() {
     ctx.globalAlpha = 0.6;
     ctx.lineWidth = 1.4;
     ctx.stroke();
-
-    // Moving data "bits" on the analog line
-    ctx.globalAlpha = 0.9;
-    const spacing = 70; // px between bits
-    const speed = (t * 60) % spacing; // pixel offset
-    for (let i = -1; i * spacing < w + spacing; i++) {
-      const x = i * spacing + speed;
-      const y = baseA + Math.sin(x * 0.02 + t * 2.0) * A1 + Math.sin(x * 0.005 + t * 0.7) * A2;
-      ctx.beginPath();
-      ctx.arc(x, y, 2.2, 0, Math.PI * 2);
-      ctx.fillStyle = Math.floor(i % 2) === 0 ? brand : brand2;
-      ctx.fill();
-    }
 
     ctx.restore();
     raf = requestAnimationFrame(draw);
@@ -647,10 +633,9 @@ function startTopECEAnimation(){
     ctx.globalCompositeOperation = 'lighter';
     const baseA = h * 0.40;
     const A1 = Math.min(18, h * 0.28);
-    const A2 = Math.min(5, h * 0.12);
     ctx.beginPath();
     for(let x=0;x<=w;x+=1){
-      const y = baseA + Math.sin(x*0.02 + t*2.3)*A1 + Math.sin(x*0.006 + t*0.8)*A2;
+      const y = baseA + Math.sin(x*0.02 + t*2.3)*A1;
       if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
     }
     ctx.strokeStyle = brand;
