@@ -74,6 +74,13 @@ const PUBLICATIONS = [
 
 const PROJECTS = [
   {
+    title: "Autonomous Logistics Drone",
+    desc: "Autonomous UAV for precise payload delivery using computer vision and GPS. Features failsafe mechanisms and reduced human intervention.",
+    tags: ["UAV", "Drone", "Computer Vision", "Embedded", "Logistics"],
+    link: "https://drive.google.com/drive/folders/1fclnMLwHnFThjI2CrSZsVXJsmFPDIvjM?usp=drive_link",
+    report: "https://drive.google.com/file/d/18LTpDZEK91iL2ODs49lhQI8zY76FmLWo/view?usp=sharing",
+  },
+  {
     title: "Smart Battery Monitoring System (IoT-Based | Arduino & ESP32)",
     desc: "Real-time battery monitoring system measuring voltage and estimating SOC. Features OLED display, ESP32 Wi-Fi connectivity for MQTT cloud logging, and fault alert support.",
     tags: ["IoT", "Arduino", "ESP32", "MQTT", "C/C++", "Embedded", "Sensors"],
