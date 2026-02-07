@@ -335,7 +335,7 @@ async function drawCerts() {
   if (!grid) return;
   let list = [];
   try {
-    const res = await fetch('assets/data/certificates.json');
+    const res = await fetch(`assets/data/certificates.json?t=${Date.now()}`);
     list = await res.json();
   } catch (e) {
     // fallback to embedded CERTS array if fetch fails

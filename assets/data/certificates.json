@@ -4,66 +4,94 @@
     "title": "DCDC – Skill Development Program on STM32 Microcontroller",
     "desc": "SRM Ramapuram DCDC participation",
     "link": "assets/certificates/Hands On Section DCDC.pdf",
-    "images": ["assets/cert-images/dcdc-stm32.jpg"]
+    "images": [
+      "assets/cert-images/dcdc-stm32.jpg"
+    ]
   },
   {
     "id": "code-galatta",
     "title": "Code Galatta – C, C++, Core Java & Python with Data Science",
     "link": "assets/certificates/Code Galata.pdf",
-    "images": ["assets/cert-images/code-galatta.jpg"]
+    "images": [
+      "assets/cert-images/code-galatta.jpg"
+    ]
   },
   {
     "id": "nptel-design-thinking",
     "title": "NPTEL – Design Thinking: A Primer",
     "link": "assets/certificates/Design Thinking - A Primer.pdf",
-    "images": ["assets/cert-images/nptel-design-thinking.jpg"]
+    "images": [
+      "assets/cert-images/nptel-design-thinking.jpg"
+    ]
   },
   {
     "id": "rotary-community-connect",
     "title": "Rotary Club of Erode – Community Project (Human Milk Bank)",
     "link": "assets/certificates/Community Connect (NGO).pdf",
-    "images": ["assets/cert-images/rotary-community-connect.jpg"]
+    "images": [
+      "assets/cert-images/rotary-community-connect.jpg"
+    ]
   },
   {
     "id": "coolmaker-internship",
     "title": "Cool Maker Solar Systems – Internship",
     "link": "assets/certificates/AKSHAY INTERSHIP 2.pdf",
-    "images": ["assets/cert-images/coolmaker-internship.jpg"]
+    "images": [
+      "assets/cert-images/coolmaker-internship.jpg"
+    ]
   },
   {
     "id": "ieee-icacrs-2024",
     "title": "IEEE – Certificate of Presentation (ICACRS 2024)",
     "link": "assets/certificates/273-3.pdf",
-    "images": ["assets/cert-images/ieee-icacrs-2024.jpg"]
+    "images": [
+      "assets/cert-images/ieee-icacrs-2024.jpg"
+    ]
   },
   {
     "id": "srm-woppd-2024",
     "title": "SRM/Optica – WOPPD 2024 Workshop",
     "link": "assets/certificates/WOPPD.pdf",
-    "images": ["assets/cert-images/srm-woppd-2024.jpg"]
+    "images": [
+      "assets/cert-images/srm-woppd-2024.jpg"
+    ]
   },
   {
     "id": "amphenol-internship",
     "title": "Amphenol Omniconnect – Internship",
     "link": "assets/certificates/Internship Certificate.pdf",
-    "images": ["assets/cert-images/amphenol-internship.jpg"]
+    "images": [
+      "assets/cert-images/amphenol-internship.jpg"
+    ]
   },
   {
     "id": "oracle-foundations",
     "title": "Oracle Certified Foundations Associate (HCM)",
     "link": "assets/certificates/Orcale.pdf",
-    "images": ["assets/cert-images/oracle-foundations.jpg"]
+    "images": [
+      "assets/cert-images/oracle-foundations.jpg"
+    ]
   },
   {
     "id": "mongodb-atlas",
     "title": "MongoDB Atlas Administration – Proof of Completion",
     "link": "assets/certificates/MangoDB.pdf",
-    "images": ["assets/cert-images/mongodb-atlas.jpg"]
+    "images": [
+      "assets/cert-images/mongodb-atlas.jpg"
+    ]
   },
   {
     "id": "udemy-verilog",
     "title": "Udemy – Verilog HDL: VLSI Hardware Design Masterclass",
     "link": "assets/certificates/VSLI UDEMY.pdf",
-    "images": ["assets/cert-images/udemy-verilog.jpg"]
+    "images": [
+      "assets/cert-images/udemy-verilog.jpg"
+    ]
+  },
+  {
+    "id": "addc-26",
+    "title": "Autonomous Drone Development Competition (ADDC)'26 by SAEINDIA",
+    "link": "https://drive.google.com/file/d/18LTpDZEK91iL2ODs49lhQI8zY76FmLWo/view?usp=sharing",
+    "images": []
   }
 ]
