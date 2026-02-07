@@ -171,7 +171,7 @@ const CERTS = [
     link: "assets/certificates/VSLI UDEMY.pdf",
   },
   {
-    title: "Autonomous Logistics Drone Event",
+    title: "Autonomous Drone Development Competition (ADDC)'26 by SAEINDIA",
     link: "https://drive.google.com/file/d/18LTpDZEK91iL2ODs49lhQI8zY76FmLWo/view?usp=sharing",
   },
 ];
