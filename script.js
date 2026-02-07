@@ -346,7 +346,7 @@ async function drawCerts() {
         a.addEventListener('click', (ev) => { ev.preventDefault(); openIfImageAvailable(c); });
       } else {
         // no images; open PDF directly
-        a.textContent = 'Open PDF →';
+        a.textContent = 'View Certificates →';
       }
     }
     grid.appendChild(card);
