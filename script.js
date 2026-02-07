@@ -174,7 +174,7 @@ const CERTS = [
 
 const EXPERIENCE = [
   { period: "Dec 2024", role: "Technical Trainee", where: "Amphenol Omniconnect India Pvt. Ltd.", notes: "Exposure to production workflows, quality discipline, and documentation in a manufacturing setup." },
-  { period: "Jun 2025", role: "Technical Intern", where: "Coolmaker Solar Systems Pvt. Ltd.", notes: "Gained hands-on experience in PCB manufacturing (etching, solder mask) and testing. Integrated hardware with embedded systems by programming ESP32 firmware for sensor interfacing." },
+  { period: "Jun 2025", role: "Technical Intern", where: "Coolmaker Solar Systems Pvt. Ltd.", notes: "Mastered the complete PCB manufacturing process from raw materials to assembly, developing hands-on skills in chemical etching and solder mask application. Conducted electrical continuity and short-circuit testing to ensure reliability. Bridged hardware with embedded systems by programming ESP32 firmware for sensor interfacing.", link: "https://drive.google.com/file/d/1kbXs3KFwysbLeTkEunzH8HsiLayzttSk/view?usp=sharing" },
   { period: "Jan 2 2026 — Jan 31 2026", role: "Electronics Head", where: "Aerospace & UAV Technology", notes: "Worked on Computer Vision (CV) integration and assisted in UAV assembly." },
 ];
 
@@ -362,6 +362,18 @@ function drawTimeline(selector, data) {
     const role = el("div", "role"); role.textContent = `${item.role}`; div.appendChild(role);
     const where = el("div", "where"); where.textContent = `${item.where} • ${item.period}`; div.appendChild(where);
     if (item.notes) { const p = el("p", "muted"); p.textContent = item.notes; div.appendChild(p); }
+    if (item.link) {
+      const a = el("a");
+      a.href = item.link;
+      a.target = "_blank";
+      a.rel = "noreferrer";
+      a.textContent = "View Certificate →";
+      a.style.display = "inline-block";
+      a.style.marginTop = "0.5rem";
+      a.style.fontSize = "0.9rem";
+      // Ensure specific styling for experience links if needed, or rely on global a styles
+      div.appendChild(a);
+    }
     root.appendChild(div);
   });
 }
