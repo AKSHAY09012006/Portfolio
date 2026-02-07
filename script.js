@@ -174,7 +174,7 @@ const CERTS = [
 const EXPERIENCE = [
   { period: "Dec 2024", role: "Technical Trainee", where: "Amphenol Omniconnect India Pvt. Ltd.", notes: "Exposure to production workflows, quality discipline, and documentation in a manufacturing setup." },
   { period: "Jun 2025", role: "Technical Intern", where: "Coolmaker Solar Systems Pvt. Ltd.", notes: "Basic understanding of solar systems, field observation, and reporting tasks." },
-  { period: "Ongoing", role: "Aerospace & UAV Technology Participation", where: "—", notes: "Hands‑on exposure to UAV systems, flight concepts, and sensor‑based applications." },
+  { period: "Jan 2 2026 — Jan 31 2026", role: "Aerospace & UAV Technology Participation", where: "—", notes: "Hands‑on exposure to UAV systems, flight concepts, and sensor‑based applications." },
 ];
 
 const EDUCATION = [
@@ -445,14 +445,14 @@ function setupContactForm() {
   const form = document.querySelector('.contact__form');
   if (!form) return;
   const statusEl = document.getElementById('formStatus');
-  
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const fd = new FormData(form);
     const name = String(fd.get('name') || '').trim();
     const fromEmail = String(fd.get('email') || '').trim();
     const message = String(fd.get('message') || '').trim();
-    
+
     if (!name || !fromEmail || !message) {
       if (statusEl) {
         statusEl.textContent = 'Please fill all required fields.';
@@ -460,14 +460,14 @@ function setupContactForm() {
       }
       return;
     }
-    
+
     const btn = form.querySelector('button[type="submit"]');
     const prevText = btn ? btn.textContent : '';
     if (btn) {
       btn.disabled = true;
       btn.textContent = 'Sending…';
     }
-    
+
     try {
       // Submit directly to Formspree
       const res = await fetch(form.action, {
@@ -475,7 +475,7 @@ function setupContactForm() {
         headers: { 'Accept': 'application/json' },
         body: fd,
       });
-      
+
       if (res.ok) {
         form.reset();
         if (statusEl) {
@@ -528,90 +528,90 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Simple image gallery modal for certificates
 const gallery = { items: [], index: 0, title: '', link: '' };
-async function imageExists(url){
-  try{ const r = await fetch(url, { method: 'HEAD' }); return r.ok; }catch{ return false; }
+async function imageExists(url) {
+  try { const r = await fetch(url, { method: 'HEAD' }); return r.ok; } catch { return false; }
 }
-async function openIfImageAvailable(cert){
+async function openIfImageAvailable(cert) {
   const first = (cert.images && cert.images[0]) || null;
-  if(!first){ if(cert.link) window.open(cert.link, '_blank'); return; }
+  if (!first) { if (cert.link) window.open(cert.link, '_blank'); return; }
   const ok = await imageExists(first);
-  if(ok) openGallery(cert); else if(cert.link) window.open(cert.link, '_blank');
+  if (ok) openGallery(cert); else if (cert.link) window.open(cert.link, '_blank');
 }
-function setupModal(){
+function setupModal() {
   const modal = document.getElementById('imageModal');
-  if(!modal) return;
+  if (!modal) return;
   const closeBtn = document.getElementById('modalClose');
   const prevBtn = document.getElementById('modalPrev');
   const nextBtn = document.getElementById('modalNext');
-  function close(){ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); }
+  function close() { modal.classList.remove('show'); modal.setAttribute('aria-hidden', 'true'); }
   closeBtn?.addEventListener('click', close);
-  modal.addEventListener('click', (e)=>{ if(e.target === modal) close(); });
-  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
-  prevBtn?.addEventListener('click', (e)=>{ e.stopPropagation(); step(-1); });
-  nextBtn?.addEventListener('click', (e)=>{ e.stopPropagation(); step(1); });
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+  nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); step(1); });
 }
-function openGallery(cert){
+function openGallery(cert) {
   gallery.items = cert.images || [];
   gallery.index = 0;
   gallery.title = cert.title || '';
   gallery.link = cert.link || '';
   renderModal();
 }
-function step(d){
-  if(!gallery.items.length) return;
+function step(d) {
+  if (!gallery.items.length) return;
   gallery.index = (gallery.index + d + gallery.items.length) % gallery.items.length;
   renderModal();
 }
-function renderModal(){
+function renderModal() {
   const modal = document.getElementById('imageModal');
   const img = document.getElementById('modalImg');
   const cap = document.getElementById('modalCaption');
-  if(!modal||!img||!cap) return;
+  if (!modal || !img || !cap) return;
   const src = gallery.items[gallery.index];
   img.onerror = () => {
     // If an image fails inside the modal, close it and open PDF fallback
     modal.classList.remove('show');
-    modal.setAttribute('aria-hidden','true');
+    modal.setAttribute('aria-hidden', 'true');
     if (gallery.link) window.open(gallery.link, '_blank');
   };
   img.src = src;
-  cap.textContent = `${gallery.title} (${gallery.index+1}/${gallery.items.length})`;
+  cap.textContent = `${gallery.title} (${gallery.index + 1}/${gallery.items.length})`;
   modal.classList.add('show');
-  modal.setAttribute('aria-hidden','false');
+  modal.setAttribute('aria-hidden', 'false');
 }
 
 // Full-width top ECE animation (re-uses same drawing but shorter height)
-function startTopECEAnimation(){
+function startTopECEAnimation() {
   const canvas = document.getElementById('ece-canvas-top');
-  if(!canvas) return;
+  if (!canvas) return;
   const ctx = canvas.getContext('2d');
   const css = getComputedStyle(document.documentElement);
   const brand = (css.getPropertyValue('--brand') || '#6cf9e6').trim();
   const brand2 = (css.getPropertyValue('--brand-2') || '#7c6cff').trim();
   let dpr = Math.max(1, window.devicePixelRatio || 1);
-  function resize(){
+  function resize() {
     dpr = Math.max(1, window.devicePixelRatio || 1);
     const rect = canvas.getBoundingClientRect();
     canvas.width = Math.max(300, Math.floor(rect.width * dpr));
     canvas.height = Math.max(120, Math.floor(rect.height * dpr));
-    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
   resize();
   window.addEventListener('resize', resize);
   let raf = 0;
-  function draw(now){
-    const t = now/1000;
-    const w = canvas.width/dpr;
-    const h = canvas.height/dpr;
-    ctx.clearRect(0,0,w,h);
+  function draw(now) {
+    const t = now / 1000;
+    const w = canvas.width / dpr;
+    const h = canvas.height / dpr;
+    ctx.clearRect(0, 0, w, h);
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
     const baseA = h * 0.40;
     const A1 = Math.min(18, h * 0.28);
     ctx.beginPath();
-    for(let x=0;x<=w;x+=1){
-      const y = baseA + Math.sin(x*0.02 + t*2.3)*A1;
-      if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    for (let x = 0; x <= w; x += 1) {
+      const y = baseA + Math.sin(x * 0.02 + t * 2.3) * A1;
+      if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     }
     ctx.strokeStyle = brand;
     ctx.globalAlpha = 0.85;
@@ -621,10 +621,10 @@ function startTopECEAnimation(){
     const ampD = Math.min(12, h * 0.22);
     const period = 140;
     ctx.beginPath();
-    for(let x=0;x<=w;x+=1){
-      const s = Math.sin((x/period)*Math.PI*2 + t*3.4);
-      const y = baseD + (s>0 ? -ampD : ampD);
-      if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    for (let x = 0; x <= w; x += 1) {
+      const s = Math.sin((x / period) * Math.PI * 2 + t * 3.4);
+      const y = baseD + (s > 0 ? -ampD : ampD);
+      if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     }
     ctx.strokeStyle = brand2;
     ctx.globalAlpha = 0.6;
@@ -633,8 +633,8 @@ function startTopECEAnimation(){
     ctx.restore();
     raf = requestAnimationFrame(draw);
   }
-  function onVis(){
-    if(document.hidden){ cancelAnimationFrame(raf); }
+  function onVis() {
+    if (document.hidden) { cancelAnimationFrame(raf); }
     else { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); }
   }
   document.addEventListener('visibilitychange', onVis);
