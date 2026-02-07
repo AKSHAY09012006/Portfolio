@@ -179,7 +179,7 @@ const EXPERIENCE = [
 ];
 
 const EDUCATION = [
-  { period: "Aug 2023 — May 2027", role: "Bachelor of Technology (B.Tech) — Electronics & Communication Engineering", where: "SRM Institute of Science & Technology, Ramapuram", notes: "CGPA: 7.53" },
+  { period: "Aug 2023 — May 2027", role: "Bachelor of Technology (B.Tech) — Electronics & Communication Engineering", where: "SRM Institute of Science & Technology, Ramapuram", notes: "CGPA: 7.74" },
   { period: "Jun 2022 — May 2023", role: "Higher Secondary (Computer Maths)", where: "Green Garden Matriculation Higher Secondary School, Erode", notes: "Percentage: 64%" },
 ];
 
