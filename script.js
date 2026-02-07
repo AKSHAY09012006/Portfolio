@@ -78,6 +78,7 @@ const PROJECTS = [
     desc: "Autonomous UAV for precise payload delivery using computer vision and GPS. Features failsafe mechanisms and reduced human intervention.",
     tags: ["UAV", "Drone", "Computer Vision", "Embedded", "Logistics"],
     link: "https://drive.google.com/drive/folders/1fclnMLwHnFThjI2CrSZsVXJsmFPDIvjM?usp=drive_link",
+    workflow: "https://drive.google.com/drive/folders/1fclnMLwHnFThjI2CrSZsVXJsmFPDIvjM?usp=drive_link",
     report: "https://drive.google.com/file/d/18LTpDZEK91iL2ODs49lhQI8zY76FmLWo/view?usp=sharing",
   },
   {
@@ -287,11 +288,14 @@ function makeCard(item) {
   const isProjects = item.section === 'projects';
   const github = item.github || null;
   const report = item.report || null;
+  const workflow = item.workflow || null;
+
   // For non-project cards (e.g., Publications/Certificates), keep the single link as "Open →"
   const openLink = (!isProjects) ? (item.demo || item.link || null) : null;
   // For projects, show simulation link only for Wokwi links (external simulation URLs)
   const simLink = (isProjects && item.link && item.link !== '#' && item.link.includes('wokwi.com')) ? item.link : null;
-  if (github || openLink || simLink || report) {
+
+  if (github || openLink || simLink || report || workflow) {
     const acts = el("div", "actions");
     if (openLink) {
       const a1 = el("a"); a1.href = openLink; a1.target = "_blank"; a1.rel = "noreferrer"; a1.textContent = "Open →"; acts.appendChild(a1);
@@ -301,6 +305,9 @@ function makeCard(item) {
     }
     if (report) {
       const aRep = el("a"); aRep.href = report; aRep.target = "_blank"; aRep.rel = "noreferrer"; aRep.textContent = "Report →"; acts.appendChild(aRep);
+    }
+    if (workflow) {
+      const aWork = el("a"); aWork.href = workflow; aWork.target = "_blank"; aWork.rel = "noreferrer"; aWork.textContent = "Workflow →"; acts.appendChild(aWork);
     }
     if (github) { const a2 = el("a"); a2.href = github; a2.target = "_blank"; a2.rel = "noreferrer"; a2.textContent = "GitHub →"; acts.appendChild(a2); }
     card.appendChild(acts);
