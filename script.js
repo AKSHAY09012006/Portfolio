@@ -175,7 +175,7 @@ const CERTS = [
 const EXPERIENCE = [
   { period: "Dec 2024", role: "Technical Trainee", where: "Amphenol Omniconnect India Pvt. Ltd.", notes: "Exposure to production workflows, quality discipline, and documentation in a manufacturing setup." },
   { period: "Jun 2025", role: "Technical Intern", where: "Coolmaker Solar Systems Pvt. Ltd.", notes: "Basic understanding of solar systems, field observation, and reporting tasks." },
-  { period: "Jan 2 2026 — Jan 31 2026", role: "Aerospace & UAV Technology Participation", where: "—", notes: "Hands‑on exposure to UAV systems, flight concepts, and sensor‑based applications." },
+  { period: "Jan 2 2026 — Jan 31 2026", role: "Electronics Head", where: "Aerospace & UAV Technology", notes: "Worked on Computer Vision (CV) integration and assisted in UAV assembly." },
 ];
 
 const EDUCATION = [
