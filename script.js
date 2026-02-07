@@ -170,6 +170,10 @@ const CERTS = [
     title: "Verilog HDL: VLSI Hardware Design (Udemy)",
     link: "assets/certificates/VSLI UDEMY.pdf",
   },
+  {
+    title: "Autonomous Logistics Drone Event",
+    link: "https://drive.google.com/file/d/18LTpDZEK91iL2ODs49lhQI8zY76FmLWo/view?usp=sharing",
+  },
 ];
 
 const EXPERIENCE = [
