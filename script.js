@@ -79,7 +79,7 @@ const PROJECTS = [
     tags: ["UAV", "Drone", "Computer Vision", "Embedded", "Logistics"],
     link: "https://drive.google.com/drive/folders/1fclnMLwHnFThjI2CrSZsVXJsmFPDIvjM?usp=drive_link",
     workflow: "https://drive.google.com/drive/folders/1fclnMLwHnFThjI2CrSZsVXJsmFPDIvjM?usp=drive_link",
-    report: "https://drive.google.com/file/d/18LTpDZEK91iL2ODs49lhQI8zY76FmLWo/view?usp=sharing",
+    report: "https://drive.google.com/drive/folders/1gagtuBQLaLjptNFnMS1WqHWTngn5SyLy?usp=sharing",
   },
   {
     title: "Smart Battery Monitoring System (IoT-Based | Arduino & ESP32)",
