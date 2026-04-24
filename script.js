@@ -1,4 +1,4 @@
-/* Data + interactions for the portfolio site */
+/* Data + interactions for the portfolio site (Updated: 2026-04-25) */
 const PROFILE = {
   name: "Akshay S S",
   roles: [
