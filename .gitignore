@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Dependencies (not used, but safe)
+node_modules/
+
+# Archives
+*.zip
+
+# Build outputs (if any)
+dist/
