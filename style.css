@@ -143,6 +143,43 @@ body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvet
   line-height: 1.4;
 }
 
+/* Research Highlight */
+.card__research {
+  font-size: 0.85rem;
+  color: #fff;
+  background: rgba(46, 168, 255, 0.05);
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin: 12px 0;
+  border-left: 3px solid var(--brand);
+  line-height: 1.5;
+}
+.card__research strong {
+  color: var(--brand);
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Featured Achievement Styling */
+.featured-card {
+  border-color: rgba(46, 168, 255, 0.3) !important;
+  background: linear-gradient(145deg, rgba(46, 168, 255, 0.05), rgba(10, 42, 106, 0.1)) !important;
+  grid-column: span 1;
+}
+.featured-card .card__title {
+  color: var(--brand);
+  font-size: 1.2rem;
+}
+.featured-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
 /* scroll progress */
 #scroll-progress{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--brand),var(--brand-2));z-index:1000}
 

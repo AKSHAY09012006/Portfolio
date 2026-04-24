@@ -280,19 +280,15 @@ function drawSkills() {
 // Cards utility
 function makeCard(item) {
   const card = el("article", "card tilt reveal");
-  // Achievement Image Preview
-  if (item.image) {
-    const imgWrap = el("div", "card__img-wrap");
-    const img = el("img");
-    img.src = item.image;
-    img.alt = item.title;
-    img.loading = "lazy";
-    imgWrap.appendChild(img);
-    card.appendChild(imgWrap);
-  }
-
   const body = el("div", "card__body");
   const h = el("h4", "card__title"); h.textContent = item.title; body.appendChild(h);
+
+  // Research Title Highlight
+  if (item.researchTitle) {
+    const rt = el("div", "card__research");
+    rt.innerHTML = `<strong>Topic:</strong> ${item.researchTitle}`;
+    body.appendChild(rt);
+  }
   
   // Achievement Metadata (Icons)
   if (item.meta) {
@@ -312,15 +308,12 @@ function makeCard(item) {
   }
   card.appendChild(body);
 
-  // Actions: remove all "Live Demo" for Projects; keep links for other sections
+  // Actions
   const isProjects = item.section === 'projects';
   const github = item.github || null;
   const report = item.report || null;
   const workflow = item.workflow || null;
-
-  // For non-project cards (e.g., Publications/Certificates), keep the single link as "Open →"
   const openLink = (!isProjects) ? (item.demo || item.link || null) : null;
-  // For projects, show simulation link only for Wokwi links (external simulation URLs)
   const simLink = (isProjects && item.link && item.link !== '#' && item.link.includes('wokwi.com')) ? item.link : null;
 
   if (github || openLink || simLink || report || workflow) {
@@ -356,22 +349,24 @@ function drawPublications() {
 
 async function drawCerts() {
   const grid = $("#certsGrid");
+  const fGrid = $("#featuredGrid");
   if (!grid) return;
+  
   let list = [];
   try {
     const res = await fetch(`assets/data/certificates.json?t=${Date.now()}`);
     list = await res.json();
   } catch (e) {
-    // fallback to embedded CERTS array if fetch fails
     list = CERTS || [];
   }
+
   list.forEach(c => {
     const cardData = {
       title: c.title,
       desc: c.desc || "",
       tags: c.tags || ["Certificate"],
       link: c.link,
-      image: (c.images && c.images.length) ? c.images[0] : null,
+      researchTitle: c.researchTitle || null,
       meta: {
         award: c.type || null,
         org: c.organizer || c.issuedBy || null,
@@ -379,20 +374,21 @@ async function drawCerts() {
       }
     };
     const card = makeCard(cardData);
+    if (c.featured) card.classList.add('featured-card');
+    
     const a = card.querySelector('.actions a');
     if (a) {
-      if (c.images && c.images.length) {
-        a.textContent = 'View Certificates →';
-        a.addEventListener('click', (ev) => { ev.preventDefault(); openIfImageAvailable(c); });
-      } else {
-        // no images; open PDF directly
-        a.textContent = 'View Certificates →';
-      }
+      a.textContent = 'View Certificates →';
     }
-    grid.appendChild(card);
+
+    if (c.featured && fGrid) {
+      fGrid.appendChild(card);
+    } else {
+      grid.appendChild(card);
+    }
   });
-  // Observe newly added cards
-  grid.querySelectorAll('.reveal').forEach(n => io.observe(n));
+
+  document.querySelectorAll('.reveal').forEach(n => io.observe(n));
 }
 
 function drawTimeline(selector, data) {
