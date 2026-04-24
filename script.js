@@ -130,7 +130,7 @@ const CERTS = [
     title: "Drone Grand Prix – 1st Place (National Level)",
     desc: "YDLO 2026 Techno-Cultural Fest, Hindustan Institute of Technology and Science (HITS). Secured 1st Position in competition.",
     tags: ["UAV", "Drone Technology", "Aeronautical Engineering", "Competition"],
-    link: "assets/certificates/drone-grand-prix.png",
+    link: "https://drive.google.com/file/d/1Pd7OEDcjjWUpotcertKylZ3Q4ShSv8Mc/view?usp=sharing",
   },
   {
     title: "DCDC - Digital Communication and Design Club",
