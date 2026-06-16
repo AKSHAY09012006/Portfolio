@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, BookOpen, Cpu, BatteryCharging } from "lucide-react";
+import { Award, BookOpen } from "lucide-react";
 
 interface JournalEntry {
   title: string;
@@ -28,22 +28,6 @@ export const Journal: React.FC = () => {
       link: "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10841562&isnumber=10841479",
       icon: <BookOpen className="w-5 h-5 text-[#4E85BF]" />,
       description: "Co-authored and presented research on integrating Quantum-dot Cellular Automata for next-gen VLSI systems.",
-    },
-    {
-      title: "IoT Smart Battery Monitoring Cloud System",
-      category: "Simulation & IoT",
-      date: "Oct 2025",
-      link: "https://wokwi.com/projects/443977277636198401",
-      icon: <BatteryCharging className="w-5 h-5 text-[#89AACC]" />,
-      description: "Engineered ESP32 Wi-Fi dashboard with MQTT telemetry logging and OLED alerts.",
-    },
-    {
-      title: "Verilog HDL: VLSI Hardware Design Certification",
-      category: "Skill Milestone",
-      date: "Udemy",
-      link: "assets/certificates/VSLI UDEMY.pdf",
-      icon: <Cpu className="w-5 h-5 text-[#4E85BF]" />,
-      description: "Validated skill sets in RTL modeling, simulation testbenches, and logic synthesis paradigms.",
     },
   ];
 
