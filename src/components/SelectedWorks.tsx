@@ -23,6 +23,116 @@ interface SelectedWorksProps {
   projects: Project[];
 }
 
+const renderSchematic = (idx: number) => {
+  if (idx === 0) {
+    return (
+      <svg className="w-full h-full text-muted/20 hover:text-muted/40 transition-colors duration-500" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <defs>
+          <pattern id="grid-0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-[0.1]" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid-0)" />
+        <line x1="100" y1="100" x2="300" y2="300" className="opacity-30" />
+        <line x1="300" y1="100" x2="100" y2="300" className="opacity-30" />
+        <circle cx="200" cy="200" r="45" className="stroke-[#89AACC] opacity-80" strokeWidth="2" />
+        <circle cx="200" cy="200" r="32" className="stroke-[#89AACC] opacity-30" />
+        <circle cx="100" cy="100" r="20" className="stroke-[#4E85BF] opacity-80" />
+        <circle cx="300" cy="100" r="20" className="stroke-[#4E85BF] opacity-80" />
+        <circle cx="100" cy="300" r="20" className="stroke-[#4E85BF] opacity-80" />
+        <circle cx="300" cy="300" r="20" className="stroke-[#4E85BF] opacity-80" />
+        <line x1="85" y1="100" x2="115" y2="100" className="opacity-60" />
+        <line x1="285" y1="100" x2="315" y2="100" className="opacity-60" />
+        <line x1="85" y1="300" x2="115" y2="300" className="opacity-60" />
+        <line x1="285" y1="300" x2="315" y2="300" className="opacity-60" />
+        <rect x="180" y="130" width="40" height="20" rx="4" className="stroke-[#89AACC] opacity-60" />
+        <text x="200" y="143" textAnchor="middle" fontSize="8" className="fill-muted/70 font-mono">GPS</text>
+        <path d="M 170,250 A 40,40 0 0,0 230,250" className="stroke-[#89AACC] opacity-50" strokeDasharray="3 3" />
+        <text x="200" y="85" textAnchor="middle" fontSize="10" className="fill-muted/50 font-mono tracking-widest font-bold">UAV SYS CONFIG</text>
+      </svg>
+    );
+  }
+  if (idx === 1) {
+    return (
+      <svg className="w-full h-full text-muted/20 hover:text-muted/40 transition-colors duration-500" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <defs>
+          <pattern id="grid-1" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-[0.1]" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid-1)" />
+        <rect x="230" y="120" width="100" height="150" rx="6" className="stroke-[#89AACC]" strokeWidth="2" />
+        <text x="280" y="145" textAnchor="middle" fontSize="11" className="fill-[#89AACC] font-mono font-bold">ESP32 Core</text>
+        <text x="280" y="160" textAnchor="middle" fontSize="8" className="fill-muted/60 font-mono">WIFI / BLE</text>
+        {Array.from({ length: 8 }).map((_, i) => (
+          <line key={i} x1="215" y1={180 + i * 10} x2="230" y2={180 + i * 10} className="stroke-stroke" />
+        ))}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <line key={i} x1="330" y1={180 + i * 10} x2="345" y2={180 + i * 10} className="stroke-stroke" />
+        ))}
+        <rect x="70" y="150" width="80" height="100" rx="8" className="stroke-[#4E85BF] opacity-80" strokeWidth="2" />
+        <line x1="110" y1="140" x2="110" y2="150" className="stroke-[#4E85BF] opacity-80" strokeWidth="4" />
+        <text x="110" y="200" textAnchor="middle" fontSize="11" className="fill-[#4E85BF] font-mono font-bold">LIPO 3.7V</text>
+        <path d="M 110,140 L 110,100 L 280,100 L 280,120" className="stroke-stroke" strokeDasharray="2 2" />
+        <path d="M 50,310 Q 90,290 130,330 T 210,300 T 290,320 T 370,280" className="stroke-[#89AACC]/30" strokeWidth="2" />
+        <text x="200" y="85" textAnchor="middle" fontSize="10" className="fill-muted/50 font-mono tracking-widest font-bold">BATTERY BALANCER</text>
+      </svg>
+    );
+  }
+  if (idx === 2) {
+    return (
+      <svg className="w-full h-full text-muted/20 hover:text-muted/40 transition-colors duration-500" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <defs>
+          <pattern id="grid-2" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-[0.1]" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid-2)" />
+        <circle cx="110" cy="180" r="35" className="stroke-[#89AACC]" strokeWidth="2" />
+        <circle cx="110" cy="180" r="28" className="stroke-[#89AACC] opacity-30" strokeDasharray="2 2" />
+        <text x="110" y="184" textAnchor="middle" fontSize="9" className="fill-[#89AACC] font-mono font-bold">MQ-6</text>
+        <rect x="70" y="270" width="80" height="30" rx="3" className="stroke-[#4E85BF] opacity-80" />
+        <circle cx="110" cy="285" r="4" className="fill-[#4E85BF]" />
+        <rect x="250" y="160" width="90" height="130" rx="6" className="stroke-stroke" />
+        <text x="295" y="195" textAnchor="middle" fontSize="10" className="fill-text-primary/70 font-mono font-bold">ATMEGA328P</text>
+        <path d="M 230,110 A 15,15 0 0,1 230,140" className="stroke-red-500/50" strokeWidth="2" />
+        <rect x="180" y="112" width="30" height="26" rx="2" className="stroke-stroke" />
+        <path d="M 210,115 L 225,105 L 225,145 L 210,135 Z" className="stroke-stroke fill-stroke/10" />
+        <path d="M 145,180 L 250,180" className="stroke-stroke" />
+        <path d="M 150,285 L 250,285" className="stroke-stroke" />
+        <text x="200" y="85" textAnchor="middle" fontSize="10" className="fill-muted/50 font-mono tracking-widest font-bold">RTGMS SCHEMATIC</text>
+      </svg>
+    );
+  }
+  return (
+    <svg className="w-full h-full text-muted/20 hover:text-muted/40 transition-colors duration-500" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <defs>
+        <pattern id="grid-3" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-[0.1]" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid-3)" />
+      <circle cx="130" cy="150" r="18" className="stroke-[#89AACC]" strokeWidth="2" />
+      <circle cx="210" cy="150" r="18" className="stroke-[#89AACC]" strokeWidth="2" />
+      <rect x="95" y="125" width="150" height="50" rx="6" className="stroke-stroke" />
+      <text x="170" y="138" textAnchor="middle" fontSize="8" className="fill-muted/60 font-mono">HC-SR04 SENSOR</text>
+      <path d="M 130,120 A 40,40 0 0,0 130,80" className="stroke-[#89AACC] opacity-80" strokeWidth="2" />
+      <path d="M 210,120 A 40,40 0 0,1 210,80" className="stroke-[#4E85BF] opacity-80" strokeWidth="2" />
+      <rect x="290" y="230" width="45" height="45" rx="22.5" className="stroke-[#4E85BF]" strokeWidth="2" />
+      <text x="312.5" y="256" textAnchor="middle" fontSize="8" className="fill-[#4E85BF] font-mono">VIB_MOTOR</text>
+      <rect x="125" y="230" width="90" height="90" rx="4" className="stroke-stroke" />
+      <text x="170" y="270" textAnchor="middle" fontSize="10" className="fill-text-primary/70 font-mono font-bold">MCU CORE</text>
+      <path d="M 130,175 L 130,230" className="stroke-[#89AACC]" />
+      <path d="M 210,175 L 210,230" className="stroke-[#4E85BF]" />
+      <text x="200" y="85" textAnchor="middle" fontSize="10" className="fill-muted/50 font-mono tracking-widest font-bold">ASSISTIVE SONAR</text>
+    </svg>
+  );
+};
+
+interface SelectedWorksProps {
+  projects: Project[];
+}
+
 export const SelectedWorks: React.FC<SelectedWorksProps> = ({ projects }) => {
   const getColSpan = (index: number) => {
     // Spans: 7, 5, 5, 7
@@ -89,17 +199,13 @@ export const SelectedWorks: React.FC<SelectedWorksProps> = ({ projects }) => {
                 className={`group relative bg-surface border border-stroke rounded-3xl overflow-hidden aspect-[4/3] md:aspect-auto md:h-[480px] flex flex-col justify-end cursor-pointer ${colSpan}`}
                 onClick={() => handleCardClick(project.link)}
               >
-                {/* Project Image */}
-                <div className="absolute inset-0 z-0">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
+                {/* Project Schematic Blueprint */}
+                <div className="absolute inset-0 z-0 flex items-center justify-center bg-[#050505]">
+                  {renderSchematic(idx)}
                   {/* Halftone texture overlay */}
-                  <div className="absolute inset-0 halftone-overlay mix-blend-multiply opacity-20" />
+                  <div className="absolute inset-0 halftone-overlay mix-blend-multiply opacity-30 pointer-events-none" />
                   {/* Card shadow overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent z-10 pointer-events-none" />
                 </div>
 
                 {/* Content - Bottom Left */}
