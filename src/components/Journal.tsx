@@ -80,7 +80,7 @@ export const Journal: React.FC = () => {
           {entries.map((entry, idx) => (
             <motion.a
               key={idx}
-              href={entry.link}
+              href={entry.link.startsWith("http") || entry.link.startsWith("/") ? entry.link : `${import.meta.env.BASE_URL}${entry.link}`}
               target="_blank"
               rel="noreferrer"
               initial={{ opacity: 0, y: 20 }}

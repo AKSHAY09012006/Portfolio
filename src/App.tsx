@@ -32,7 +32,7 @@ const PROJECTS: Project[] = [
     link: "https://drive.google.com/drive/folders/1fclnMLwHnFThjI2CrSZsVXJsmFPDIvjM?usp=drive_link",
     workflow: "https://drive.google.com/drive/folders/1fclnMLwHnFThjI2CrSZsVXJsmFPDIvjM?usp=drive_link",
     report: "https://drive.google.com/drive/folders/1gagtuBQLaLjptNFnMS1WqHWTngn5SyLy?usp=sharing",
-    image: "/images/logistics_drone.png",
+    image: import.meta.env.BASE_URL + "images/logistics_drone.png",
   },
   {
     title: "Smart Battery Monitoring (ESP32 / IoT)",
@@ -40,7 +40,7 @@ const PROJECTS: Project[] = [
     tags: ["IoT", "ESP32", "MQTT", "Sensors", "Embedded C"],
     link: "https://wokwi.com/projects/443977277636198401",
     report: "https://drive.google.com/file/d/1QbtUvj67SesyGE46RAaKSby6MhH8pfKw/view?usp=sharing",
-    image: "/images/battery_monitoring.png",
+    image: import.meta.env.BASE_URL + "images/battery_monitoring.png",
   },
   {
     title: "Real-Time Gas Monitoring System (RTGMS)",
@@ -48,7 +48,7 @@ const PROJECTS: Project[] = [
     tags: ["Embedded C", "Sensors", "Hardware Prototypes"],
     link: "https://wokwi.com/projects/437115151985582081",
     report: "https://drive.google.com/file/d/1mMDl24n0oo1D2Rrw4yOzHp4PrSHluflJ/view?usp=sharing",
-    image: "/images/gas_monitoring.png",
+    image: import.meta.env.BASE_URL + "images/gas_monitoring.png",
   },
   {
     title: "Vision Cane — Assistive Navigation",
@@ -56,7 +56,7 @@ const PROJECTS: Project[] = [
     tags: ["Embedded Hardware", "Ultrasonic Sensors", "Assisted Design"],
     link: "https://drive.google.com/file/d/1HuYhNUWZTk_ZOqqtBCYQ4nLbB94SZIk4/view?usp=sharing",
     report: "https://drive.google.com/file/d/1HuYhNUWZTk_ZOqqtBCYQ4nLbB94SZIk4/view?usp=sharing",
-    image: "/images/vision_cane.png",
+    image: import.meta.env.BASE_URL + "images/vision_cane.png",
   },
 ];
 

@@ -17,42 +17,42 @@ const ITEMS: ExplorationItem[] = [
   {
     title: "Amphenol Trainee",
     category: "Internship",
-    image: "/images/exploration_1.png",
+    image: import.meta.env.BASE_URL + "images/exploration_1.png",
     link: "assets/certificates/Internship Certificate.pdf",
     desc: "Learned production workflows, quality engineering, and manufacturing specs.",
   },
   {
     title: "DCDC Club Training",
     category: "Club Credentials",
-    image: "/images/exploration_2.png",
+    image: import.meta.env.BASE_URL + "images/exploration_2.png",
     link: "assets/certificates/Hands On Section DCDC.pdf",
     desc: "Hands-on session on digital communication designs and protocols.",
   },
   {
     title: "Design Thinking: Primer",
     category: "NPTEL / IIT",
-    image: "/images/exploration_3.png",
+    image: import.meta.env.BASE_URL + "images/exploration_3.png",
     link: "assets/certificates/Design Thinking - A Primer.pdf",
     desc: "Verified foundational primer on user-centric design methodologies.",
   },
   {
     title: "Oracle SQL Foundations",
     category: "Industry Cert",
-    image: "/images/exploration_4.png",
+    image: import.meta.env.BASE_URL + "images/exploration_4.png",
     link: "assets/certificates/Orcale.pdf",
     desc: "Certified in database schemas, relationships, and SQL querying.",
   },
   {
     title: "MongoDB Atlas Admin",
     category: "Cloud Database",
-    image: "/images/exploration_5.png",
+    image: import.meta.env.BASE_URL + "images/exploration_5.png",
     link: "assets/certificates/MangoDB.pdf",
     desc: "Learned cloud cluster administration, document modeling, and index optimization.",
   },
   {
     title: "Verilog HDL Hardware Design",
     category: "VLSI / Udemy",
-    image: "/images/exploration_6.png",
+    image: import.meta.env.BASE_URL + "images/exploration_6.png",
     link: "assets/certificates/VSLI UDEMY.pdf",
     desc: "Advanced training in hardware description languages and synthesis simulation.",
   },
@@ -117,7 +117,10 @@ export const Explorations: React.FC = () => {
 
   const handleCardClick = (link: string) => {
     if (link) {
-      window.open(link, "_blank");
+      const url = link.startsWith("http") || link.startsWith("/")
+        ? link
+        : `${import.meta.env.BASE_URL}${link}`;
+      window.open(url, "_blank");
     }
   };
 
