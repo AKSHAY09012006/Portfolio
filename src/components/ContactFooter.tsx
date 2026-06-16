@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
 import gsap from "gsap";
-import { Mail, Phone, MapPin, ArrowRight, Loader } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, ArrowRight, Loader } from "lucide-react";
 
 const GithubIcon = ({ size = 18 }: { size?: number }) => (
   <svg
@@ -252,6 +252,21 @@ export const ContactFooter: React.FC = () => {
                 <div>
                   <div className="text-[10px] text-muted font-mono uppercase tracking-wider">Location</div>
                   <div className="text-xs sm:text-sm font-semibold text-text-primary">{PROFILE.location}</div>
+                </div>
+              </div>
+
+              <div className="inline-flex items-start gap-3 p-4 bg-surface/30 border border-stroke/50 rounded-2xl">
+                <div className="p-2.5 rounded-full bg-stroke/60 border border-white/5 text-muted mt-0.5">
+                  <Globe size={16} />
+                </div>
+                <div>
+                  <div className="text-[10px] text-muted font-mono uppercase tracking-wider">Languages</div>
+                  <div className="flex flex-wrap gap-1 mt-1.5">
+                    <span className="text-[9px] font-mono text-text-primary/70 bg-white/5 border border-white/10 px-2 py-0.5 rounded-md">Malayalam (Native)</span>
+                    <span className="text-[9px] font-mono text-text-primary/70 bg-white/5 border border-white/10 px-2 py-0.5 rounded-md">Tamil (Fluent)</span>
+                    <span className="text-[9px] font-mono text-text-primary/70 bg-white/5 border border-white/10 px-2 py-0.5 rounded-md">English (Fluent)</span>
+                    <span className="text-[9px] font-mono text-text-primary/70 bg-white/5 border border-white/10 px-2 py-0.5 rounded-md">German (Intermediate)</span>
+                  </div>
                 </div>
               </div>
             </div>
