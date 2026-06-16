@@ -59,6 +59,30 @@ const PROJECTS: Project[] = [
     report: "https://drive.google.com/file/d/1HuYhNUWZTk_ZOqqtBCYQ4nLbB94SZIk4/view?usp=sharing",
     image: import.meta.env.BASE_URL + "images/vision_cane.png",
   },
+  {
+    title: "ExpanseIQ — Expense Intelligence",
+    desc: "An expense intelligence web application prototype featuring secure tracking, category filters, and data visualization analytics dashboard.",
+    tags: ["Web App", "JavaScript", "Analytics"],
+    link: "assets/projects/ExpanseIQ/index.html",
+    github: "https://github.com/AKSHAY09012006/ExpanseIq.git",
+    image: "",
+  },
+  {
+    title: "Complaint Management Portal",
+    desc: "A digital portal for complaint submission, category assignment, and real-time status tracking.",
+    tags: ["Web Portal", "Database", "Tracking"],
+    link: "assets/projects/ComplaintSystem/index.html",
+    github: "https://github.com/AKSHAY09012006/ComplaintHub.git",
+    image: "",
+  },
+  {
+    title: "Elite Shop — E-Commerce Prototype",
+    desc: "A mini online shop prototype containing dynamic product catalog displays, cart items registration, and checkout flows.",
+    tags: ["E-Commerce", "JavaScript", "UI Design"],
+    link: "assets/projects/EliteShop/index.html",
+    github: "https://github.com/AKSHAY09012006/EliteShop.git",
+    image: "",
+  },
 ];
 
 function App() {

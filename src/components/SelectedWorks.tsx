@@ -104,34 +104,135 @@ const renderSchematic = (idx: number) => {
       </svg>
     );
   }
+  if (idx === 3) {
+    return (
+      <svg className="w-full h-full text-muted/20 hover:text-muted/40 transition-colors duration-500" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <defs>
+          <pattern id="grid-3" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-[0.1]" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid-3)" />
+        <circle cx="130" cy="150" r="18" className="stroke-[#89AACC]" strokeWidth="2" />
+        <circle cx="210" cy="150" r="18" className="stroke-[#89AACC]" strokeWidth="2" />
+        <rect x="95" y="125" width="150" height="50" rx="6" className="stroke-stroke" />
+        <text x="170" y="138" textAnchor="middle" fontSize="8" className="fill-muted/60 font-mono">HC-SR04 SENSOR</text>
+        <path d="M 130,120 A 40,40 0 0,0 130,80" className="stroke-[#89AACC] opacity-80" strokeWidth="2" />
+        <path d="M 210,120 A 40,40 0 0,1 210,80" className="stroke-[#4E85BF] opacity-80" strokeWidth="2" />
+        <rect x="290" y="230" width="45" height="45" rx="22.5" className="stroke-[#4E85BF]" strokeWidth="2" />
+        <text x="312.5" y="256" textAnchor="middle" fontSize="8" className="fill-[#4E85BF] font-mono">VIB_MOTOR</text>
+        <rect x="125" y="230" width="90" height="90" rx="4" className="stroke-stroke" />
+        <text x="170" y="270" textAnchor="middle" fontSize="10" className="fill-text-primary/70 font-mono font-bold">MCU CORE</text>
+        <path d="M 130,175 L 130,230" className="stroke-[#89AACC]" />
+        <path d="M 210,175 L 210,230" className="stroke-[#4E85BF]" />
+        <text x="200" y="85" textAnchor="middle" fontSize="10" className="fill-muted/50 font-mono tracking-widest font-bold">ASSISTIVE SONAR</text>
+      </svg>
+    );
+  }
+  if (idx === 4) {
+    return (
+      <svg className="w-full h-full text-muted/20 hover:text-muted/40 transition-colors duration-500" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <defs>
+          <pattern id="grid-4" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-[0.1]" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid-4)" />
+        <rect x="50" y="130" width="95" height="40" rx="4" className="stroke-[#89AACC]" strokeWidth="2" />
+        <text x="97.5" y="154" textAnchor="middle" fontSize="8" className="fill-[#89AACC] font-mono font-bold">INCOME DISPATCH</text>
+        
+        <rect x="50" y="230" width="95" height="40" rx="4" className="stroke-[#4E85BF]" strokeWidth="2" />
+        <text x="97.5" y="254" textAnchor="middle" fontSize="8" className="fill-[#4E85BF] font-mono font-bold">EXPENSE CATEGORIES</text>
+
+        <rect x="250" y="160" width="100" height="80" rx="6" className="stroke-stroke" />
+        <text x="300" y="190" textAnchor="middle" fontSize="9" className="fill-text-primary/70 font-mono font-bold">ANALYTICS ENGINE</text>
+        <text x="300" y="210" textAnchor="middle" fontSize="7" className="fill-muted/50 font-mono">DATA METRICS</text>
+
+        <path d="M 145,150 L 195,150 L 195,200 L 250,200" className="stroke-stroke" strokeDasharray="3 3" />
+        <path d="M 145,250 L 195,250 L 195,200" className="stroke-stroke" />
+        
+        <path d="M 260,230 L 280,215 L 300,225 L 320,205 L 340,210" className="stroke-[#89AACC] opacity-80" strokeWidth="1.5" />
+        <circle cx="280" cy="215" r="2.5" className="fill-[#89AACC]" />
+        <circle cx="320" cy="205" r="2.5" className="fill-[#89AACC]" />
+
+        <text x="200" y="85" textAnchor="middle" fontSize="10" className="fill-muted/50 font-mono tracking-widest font-bold">EXPANSEIQ ARCH</text>
+      </svg>
+    );
+  }
+  if (idx === 5) {
+    return (
+      <svg className="w-full h-full text-muted/20 hover:text-muted/40 transition-colors duration-500" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <defs>
+          <pattern id="grid-5" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-[0.1]" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid-5)" />
+        <rect x="60" y="110" width="80" height="30" rx="3" className="stroke-[#89AACC]" strokeWidth="2" />
+        <text x="100" y="128" textAnchor="middle" fontSize="8" className="fill-[#89AACC] font-mono font-bold">OPEN TICKET</text>
+
+        <rect x="60" y="185" width="80" height="30" rx="3" className="stroke-[#4E85BF]" strokeWidth="2" />
+        <text x="100" y="203" textAnchor="middle" fontSize="8" className="fill-[#4E85BF] font-mono font-bold">IN_PROGRESS</text>
+
+        <rect x="60" y="260" width="80" height="30" rx="3" className="stroke-stroke" />
+        <text x="100" y="278" textAnchor="middle" fontSize="8" className="fill-muted/70 font-mono font-bold">RESOLVED</text>
+
+        <path d="M 100,140 L 100,185" className="stroke-stroke" strokeDasharray="3 3" />
+        <path d="M 100,215 L 100,260" className="stroke-stroke" strokeDasharray="3 3" />
+
+        <rect x="230" y="160" width="110" height="80" rx="6" className="stroke-stroke" />
+        <text x="285" y="195" textAnchor="middle" fontSize="9" className="fill-text-primary/70 font-mono font-bold">RELATIONAL DB</text>
+        <text x="285" y="215" textAnchor="middle" fontSize="7" className="fill-muted/50 font-mono">SCHEMAS & TABLES</text>
+
+        <path d="M 140,200 L 230,200" className="stroke-stroke" />
+        <path d="M 140,125 L 185,125 L 185,200" className="stroke-stroke" />
+        <path d="M 140,275 L 185,275 L 185,200" className="stroke-stroke" />
+
+        <text x="200" y="85" textAnchor="middle" fontSize="10" className="fill-muted/50 font-mono tracking-widest font-bold">COMPLAINT PORTAL DB</text>
+      </svg>
+    );
+  }
+  if (idx === 6) {
+    return (
+      <svg className="w-full h-full text-muted/20 hover:text-muted/40 transition-colors duration-500" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <defs>
+          <pattern id="grid-6" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-[0.1]" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid-6)" />
+        <rect x="50" y="130" width="100" height="130" rx="6" className="stroke-stroke" />
+        <text x="100" y="155" textAnchor="middle" fontSize="8" className="fill-muted/70 font-mono font-bold">PRODUCT LIST</text>
+        
+        <rect x="65" y="170" width="70" height="20" rx="2" className="stroke-[#89AACC]/50" />
+        <rect x="65" y="195" width="70" height="20" rx="2" className="stroke-[#89AACC]/50" />
+        <rect x="65" y="220" width="70" height="20" rx="2" className="stroke-[#89AACC]/50" />
+
+        <rect x="250" y="130" width="100" height="50" rx="4" className="stroke-[#89AACC]" strokeWidth="2" />
+        <text x="300" y="158" textAnchor="middle" fontSize="8" className="fill-[#89AACC] font-mono font-bold">SHOPPING CART</text>
+
+        <rect x="250" y="210" width="100" height="50" rx="4" className="stroke-[#4E85BF]" strokeWidth="2" />
+        <text x="300" y="238" textAnchor="middle" fontSize="8" className="fill-[#4E85BF] font-mono font-bold">CHECKOUT GATEWAY</text>
+
+        <path d="M 150,195 L 200,195 L 200,155 L 250,155" className="stroke-stroke" />
+        <path d="M 300,180 L 300,210" className="stroke-stroke" strokeDasharray="3 3" />
+
+        <text x="200" y="85" textAnchor="middle" fontSize="10" className="fill-muted/50 font-mono tracking-widest font-bold">ELITE SHOP SYSTEM</text>
+      </svg>
+    );
+  }
   return (
     <svg className="w-full h-full text-muted/20 hover:text-muted/40 transition-colors duration-500" viewBox="0 0 400 400" fill="none" stroke="currentColor" strokeWidth="1.5">
       <defs>
-        <pattern id="grid-3" width="20" height="20" patternUnits="userSpaceOnUse">
+        <pattern id="grid-default" width="20" height="20" patternUnits="userSpaceOnUse">
           <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5" className="opacity-[0.1]" />
         </pattern>
       </defs>
-      <rect width="100%" height="100%" fill="url(#grid-3)" />
-      <circle cx="130" cy="150" r="18" className="stroke-[#89AACC]" strokeWidth="2" />
-      <circle cx="210" cy="150" r="18" className="stroke-[#89AACC]" strokeWidth="2" />
-      <rect x="95" y="125" width="150" height="50" rx="6" className="stroke-stroke" />
-      <text x="170" y="138" textAnchor="middle" fontSize="8" className="fill-muted/60 font-mono">HC-SR04 SENSOR</text>
-      <path d="M 130,120 A 40,40 0 0,0 130,80" className="stroke-[#89AACC] opacity-80" strokeWidth="2" />
-      <path d="M 210,120 A 40,40 0 0,1 210,80" className="stroke-[#4E85BF] opacity-80" strokeWidth="2" />
-      <rect x="290" y="230" width="45" height="45" rx="22.5" className="stroke-[#4E85BF]" strokeWidth="2" />
-      <text x="312.5" y="256" textAnchor="middle" fontSize="8" className="fill-[#4E85BF] font-mono">VIB_MOTOR</text>
-      <rect x="125" y="230" width="90" height="90" rx="4" className="stroke-stroke" />
-      <text x="170" y="270" textAnchor="middle" fontSize="10" className="fill-text-primary/70 font-mono font-bold">MCU CORE</text>
-      <path d="M 130,175 L 130,230" className="stroke-[#89AACC]" />
-      <path d="M 210,175 L 210,230" className="stroke-[#4E85BF]" />
-      <text x="200" y="85" textAnchor="middle" fontSize="10" className="fill-muted/50 font-mono tracking-widest font-bold">ASSISTIVE SONAR</text>
+      <rect width="100%" height="100%" fill="url(#grid-default)" />
+      <text x="200" y="200" textAnchor="middle" fontSize="12" className="fill-muted/50 font-mono">SYSTEM SCHEMATIC</text>
     </svg>
   );
 };
-
-interface SelectedWorksProps {
-  projects: Project[];
-}
 
 export const SelectedWorks: React.FC<SelectedWorksProps> = ({ projects }) => {
   const getColSpan = (index: number) => {
