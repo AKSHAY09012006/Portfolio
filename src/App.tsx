@@ -65,7 +65,7 @@ const PROJECTS: Project[] = [
     tags: ["Web App", "JavaScript", "Analytics"],
     link: "assets/projects/ExpanseIQ/index.html",
     github: "https://github.com/AKSHAY09012006/ExpanseIq.git",
-    image: "",
+    image: import.meta.env.BASE_URL + "images/expanse_iq.png",
   },
   {
     title: "Complaint Management Portal",
@@ -73,7 +73,7 @@ const PROJECTS: Project[] = [
     tags: ["Web Portal", "Database", "Tracking"],
     link: "assets/projects/ComplaintSystem/index.html",
     github: "https://github.com/AKSHAY09012006/ComplaintHub.git",
-    image: "",
+    image: import.meta.env.BASE_URL + "images/complaint_portal.png",
   },
   {
     title: "Elite Shop — E-Commerce Prototype",
@@ -81,7 +81,7 @@ const PROJECTS: Project[] = [
     tags: ["E-Commerce", "JavaScript", "UI Design"],
     link: "assets/projects/EliteShop/index.html",
     github: "https://github.com/AKSHAY09012006/EliteShop.git",
-    image: "",
+    image: import.meta.env.BASE_URL + "images/elite_shop.png",
   },
 ];
 
