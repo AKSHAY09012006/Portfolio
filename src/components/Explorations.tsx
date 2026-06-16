@@ -15,25 +15,67 @@ interface ExplorationItem {
 
 const ITEMS: ExplorationItem[] = [
   {
+    title: "National Drone Grand Prix",
+    category: "National Winner (1st)",
+    image: import.meta.env.BASE_URL + "images/exploration_2.png",
+    link: "assets/certificates/drone-grand-prix.png",
+    desc: "Secured 1st position at YDLO 2026 Techno-Cultural Fest, HITS, demonstrating UAV maneuverability.",
+  },
+  {
     title: "Amphenol Trainee",
     category: "Internship",
     image: import.meta.env.BASE_URL + "images/exploration_1.png",
     link: "assets/certificates/Internship Certificate.pdf",
-    desc: "Learned production workflows, quality engineering, and manufacturing specs.",
+    desc: "Learned production workflows, quality engineering, and manufacturing specifications.",
+  },
+  {
+    title: "Cool Maker Solar Systems",
+    category: "Technical Intern",
+    image: import.meta.env.BASE_URL + "images/exploration_9.png",
+    link: "assets/certificates/AKSHAY INTERSHIP 2.pdf",
+    desc: "Hands-on experience in solar panel layout design, installation, and heater servicing.",
   },
   {
     title: "DCDC Club Training",
     category: "Club Credentials",
-    image: import.meta.env.BASE_URL + "images/exploration_2.png",
+    image: import.meta.env.BASE_URL + "images/exploration_12.png",
     link: "assets/certificates/Hands On Section DCDC.pdf",
-    desc: "Hands-on session on digital communication designs and protocols.",
+    desc: "Hands-on session on digital communication designs, protocols, and electronics boards.",
+  },
+  {
+    title: "Code Galata Certification",
+    category: "Programming",
+    image: import.meta.env.BASE_URL + "images/exploration_7.png",
+    link: "assets/certificates/Code Galata.pdf",
+    desc: "Programming workshop credential demonstrating logic synthesis and software foundations.",
   },
   {
     title: "Design Thinking: Primer",
     category: "NPTEL / IIT",
     image: import.meta.env.BASE_URL + "images/exploration_3.png",
     link: "assets/certificates/Design Thinking - A Primer.pdf",
-    desc: "Verified foundational primer on user-centric design methodologies.",
+    desc: "Verified foundational primer on user-centric design methodologies and problem framing.",
+  },
+  {
+    title: "Community Connect NGO",
+    category: "NGO Volunteering",
+    image: import.meta.env.BASE_URL + "images/exploration_8.png",
+    link: "assets/certificates/Community Connect (NGO).pdf",
+    desc: "Completed community service project for Human Milk Bank operations and documentation.",
+  },
+  {
+    title: "IEEE Presenter (ICACRS)",
+    category: "Research Presentation",
+    image: import.meta.env.BASE_URL + "images/exploration_10.png",
+    link: "assets/certificates/273-3.pdf",
+    desc: "Co-authored and presented VLSI QCA integration research at international conference.",
+  },
+  {
+    title: "WOPPD 2024 Photonics",
+    category: "SRM Workshop",
+    image: import.meta.env.BASE_URL + "images/exploration_11.png",
+    link: "assets/certificates/WOPPD.pdf",
+    desc: "Participated in specialized Photonics Workshop detailing lasers, lenses, and optical communication.",
   },
   {
     title: "Oracle SQL Foundations",
@@ -54,7 +96,7 @@ const ITEMS: ExplorationItem[] = [
     category: "VLSI / Udemy",
     image: import.meta.env.BASE_URL + "images/exploration_6.png",
     link: "assets/certificates/VSLI UDEMY.pdf",
-    desc: "Advanced training in hardware description languages and synthesis simulation.",
+    desc: "Advanced training in hardware description languages, RTL simulation, and logic synthesis.",
   },
 ];
 

@@ -7,6 +7,7 @@ import { SelectedWorks } from "./components/SelectedWorks";
 import { Journal } from "./components/Journal";
 import { Explorations } from "./components/Explorations";
 import { Stats } from "./components/Stats";
+import { ExperienceEducation } from "./components/ExperienceEducation";
 import { ContactFooter } from "./components/ContactFooter";
 import type { Project } from "./types";
 
@@ -91,6 +92,8 @@ function App() {
             <Journal />
             
             <Explorations />
+            
+            <ExperienceEducation />
             
             <Stats />
           </main>
