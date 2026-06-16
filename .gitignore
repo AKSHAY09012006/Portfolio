@@ -1,16 +1,24 @@
-# OS
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-Thumbs.db
-
-# Editor
-.vscode/
-.idea/
-
-# Dependencies (not used, but safe)
-node_modules/
-
-# Archives
-*.zip
-
-# Build outputs (if any)
-dist/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
