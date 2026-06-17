@@ -7,7 +7,7 @@ import { SelectedWorks } from "./components/SelectedWorks";
 import { Journal } from "./components/Journal";
 import { Explorations } from "./components/Explorations";
 import { Stats } from "./components/Stats";
-import { ExperienceEducation } from "./components/ExperienceEducation";
+import { WorkExperience, AcademicEducation } from "./components/ExperienceEducation";
 import { ContactFooter } from "./components/ContactFooter";
 import type { Project } from "./types";
 
@@ -113,11 +113,13 @@ function App() {
             
             <SelectedWorks projects={PROJECTS} />
             
-            <ExperienceEducation />
+            <WorkExperience />
             
             <Journal />
             
             <Explorations />
+            
+            <AcademicEducation />
             
             <Stats />
           </main>
