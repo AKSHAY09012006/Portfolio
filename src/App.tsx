@@ -113,11 +113,11 @@ function App() {
             
             <SelectedWorks projects={PROJECTS} />
             
+            <ExperienceEducation />
+            
             <Journal />
             
             <Explorations />
-            
-            <ExperienceEducation />
             
             <Stats />
           </main>

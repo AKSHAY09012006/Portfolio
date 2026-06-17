@@ -14,7 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({ resumeUrl }) => {
       setIsScrolled(window.scrollY > 50);
 
       // Section tracker
-      const sections = ["home", "work", "journal", "explorations", "contact"];
+      const sections = ["home", "work", "experience", "journal", "explorations", "contact"];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -78,6 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ resumeUrl }) => {
           {[
             { label: "Home", id: "home" },
             { label: "Work", id: "work" },
+            { label: "Experience", id: "experience" },
             { label: "Achievements", id: "journal" },
             { label: "Explorations", id: "explorations" },
           ].map((link) => {
