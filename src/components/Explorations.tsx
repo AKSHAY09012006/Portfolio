@@ -18,7 +18,7 @@ const ITEMS: ExplorationItem[] = [
     title: "National Drone Grand Prix",
     category: "National Winner (1st)",
     image: import.meta.env.BASE_URL + "images/exploration_2.png",
-    link: "assets/certificates/drone-grand-prix.png",
+    link: "https://drive.google.com/file/d/1Pd7OEDcjjWUpotcertKylZ3Q4ShSv8Mc/view?usp=sharing",
     desc: "Secured 1st position at YDLO 2026 Techno-Cultural Fest, HITS, demonstrating UAV maneuverability.",
   },
   {
