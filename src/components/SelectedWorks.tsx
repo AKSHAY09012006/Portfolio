@@ -312,14 +312,15 @@ export const SelectedWorks: React.FC<SelectedWorksProps> = ({ projects }) => {
                 {/* Content - Bottom Left */}
                 <div className="relative z-20 p-6 md:p-8 flex flex-col justify-between h-full">
                   {/* Top Links Row */}
-                  <div className="flex justify-end gap-2" onClick={(e) => e.stopPropagation()}>
+                  <div className="flex justify-end gap-2 relative z-40 pointer-events-auto" onClick={(e) => e.stopPropagation()}>
                     {project.github && (
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 rounded-full bg-black/40 border border-white/5 text-muted hover:text-text-primary hover:bg-black/60 transition-all duration-200"
+                        className="p-2 rounded-full bg-black/60 border border-white/10 text-muted hover:text-text-primary hover:bg-black/80 transition-all duration-200"
                         title="GitHub Codebase"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <GithubIcon size={16} />
                       </a>
@@ -329,8 +330,9 @@ export const SelectedWorks: React.FC<SelectedWorksProps> = ({ projects }) => {
                         href={project.report}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 rounded-full bg-black/40 border border-white/5 text-muted hover:text-text-primary hover:bg-black/60 transition-all duration-200"
+                        className="p-2 rounded-full bg-black/60 border border-white/10 text-muted hover:text-text-primary hover:bg-black/80 transition-all duration-200"
                         title="Project Report"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <FileText size={16} />
                       </a>
@@ -340,8 +342,9 @@ export const SelectedWorks: React.FC<SelectedWorksProps> = ({ projects }) => {
                         href={project.workflow}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 rounded-full bg-black/40 border border-white/5 text-muted hover:text-text-primary hover:bg-black/60 transition-all duration-200"
+                        className="p-2 rounded-full bg-black/60 border border-white/10 text-muted hover:text-text-primary hover:bg-black/80 transition-all duration-200"
                         title="Workflow Documentation"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <Settings size={16} />
                       </a>
@@ -351,8 +354,9 @@ export const SelectedWorks: React.FC<SelectedWorksProps> = ({ projects }) => {
                         href={project.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 rounded-full bg-black/40 border border-white/5 text-muted hover:text-text-primary hover:bg-black/60 transition-all duration-200"
+                        className="p-2 rounded-full bg-black/60 border border-white/10 text-muted hover:text-text-primary hover:bg-black/80 transition-all duration-200"
                         title="Run Wokwi Simulator"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <ExternalLink size={16} />
                       </a>
@@ -383,7 +387,7 @@ export const SelectedWorks: React.FC<SelectedWorksProps> = ({ projects }) => {
                 </div>
 
                 {/* Hover Reveal Card Label */}
-                <div className="absolute inset-0 bg-[#0a0a0a]/70 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-400 z-35 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#0a0a0a]/70 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-400 z-30 pointer-events-none flex items-center justify-center">
                   <div className="relative p-[1px] rounded-full overflow-hidden animate-gradient-shift accent-gradient">
                     <div className="bg-white text-black px-6 py-3 rounded-full flex items-center gap-2 shadow-lg font-medium text-xs tracking-wider uppercase">
                       <Eye size={14} className="stroke-[2.5]" />
